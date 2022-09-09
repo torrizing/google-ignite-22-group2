@@ -1,4 +1,4 @@
-# google_ignite_app
+# LFG App
 
 A new Flutter project.
 
