@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
-import 'landing.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const LandingPage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(
+            backgroundColor: Colors.green,
+            title: const Text("Google Ignite")
+        ),
+        body: Row(
+          children: const [
+            Text("Hello"),
+          ],
+        )
+      )
     );
   }
 }
