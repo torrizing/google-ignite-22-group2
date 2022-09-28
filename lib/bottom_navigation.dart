@@ -33,19 +33,20 @@ class _BottomNavigationState extends State<BottomNavigation> {
           title: const Text('Hey, Food Bank!'),
           elevation: 0,
           backgroundColor: Colors.white),
-      body: Center(child: _pages.elementAt(_selectedIndex)),
+      body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(Icons.home_rounded),
               label: 'Home',
             ),
-            BottomNavigationBarItem(icon: Icon(Icons.textsms), label: ''),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
+                icon: Icon(Icons.textsms_rounded), label: ''),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings_rounded),
               label: '',
             ),
           ],
