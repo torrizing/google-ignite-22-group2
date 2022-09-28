@@ -30,9 +30,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Hey, Food Bank!'),
+          title: const Text('Hey, Food Bank!', style: TextStyle(color: Colors.white),),
           elevation: 0,
-          backgroundColor: Colors.white),
+          backgroundColor: Colors.transparent),
       body: _pages.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
