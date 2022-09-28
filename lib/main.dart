@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'landing_page.dart';
+import 'package:google_ignite_app/bottom_navigation.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: _title,
-      home: LandingPage(),
+      home: BottomNavigation(),
     );
   }
 }
