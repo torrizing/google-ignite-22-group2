@@ -5,18 +5,26 @@ class DeliveryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+            iconTheme: const IconThemeData(color: Colors.black),
+            title: const Text(
+              'Hey, Food Bank!',
+              style: TextStyle(color: Colors.transparent),
+            ),
+            elevation: 0,
+            backgroundColor: Colors.transparent),
+        body: const DeliveryContent());
+  }
+}
+
+class DeliveryContent extends StatelessWidget {
+  const DeliveryContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(color: Colors.white),
-      child: const Center(
-        child: Text(
-          'Delivery Page',
-          // textDirection: TextDirection.ltr,
-          // style: TextStyle(
-          //   fontSize: 32,
-          //   color: Colors.black87,
-          // ),
-        ),
-      ),
+      child: const Text("Hi"),
     );
   }
 }

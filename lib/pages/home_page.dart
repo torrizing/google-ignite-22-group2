@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/pages/auth/delivery_page.dart';
+import 'package:google_ignite_app/pages/delivery_page.dart';
 import 'package:google_ignite_app/widget/widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -104,69 +104,80 @@ Widget servicesCard() {
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(child: deliveryCard()),
-          Container(child: chatCard()),
+        children: const [
+          DeliveryCard(),
+          ChatCard(),
         ],
       ));
 }
 
-Widget deliveryCard() {
-  return Card(
-      // elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-        side: const BorderSide(
-          color: Colors.grey,
-          width: .3,
+class DeliveryCard extends StatelessWidget {
+  const DeliveryCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+        // elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: const BorderSide(
+            color: Colors.grey,
+            width: .3,
+          ),
         ),
-      ),
-      color: Colors.white,
-      child: (InkWell(
-          splashColor: Colors.blue.withAlpha(30),
-          onTap: () {
-            debugPrint('Delivery Tapped');
-          },
-          child: const SizedBox(
-              width: 158,
-              height: 111,
-              child: Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text("Incoming Delivery",
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Colors.black,
-                        // fontWeight: FontWeight.w500,
-                      )))))));
+        color: Colors.white,
+        child: (InkWell(
+            splashColor: Colors.blue.withAlpha(30),
+            onTap: () {
+              debugPrint('Delivery Tapped');
+              nextScreen(context, const DeliveryPage());
+            },
+            child: const SizedBox(
+                width: 158,
+                height: 111,
+                child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Text("Incoming Delivery",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.black,
+                          // fontWeight: FontWeight.w500,
+                        )))))));
+  }
 }
 
-Widget chatCard() {
-  return Card(
-      // elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-        side: const BorderSide(
-          color: Colors.grey,
-          width: .3,
+class ChatCard extends StatelessWidget {
+  const ChatCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+        // elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+          side: const BorderSide(
+            color: Colors.grey,
+            width: .3,
+          ),
         ),
-      ),
-      color: Colors.white,
-      child: (InkWell(
-          splashColor: Colors.blue.withAlpha(30),
-          onTap: () {
-            debugPrint('Tapped');
-          },
-          child: const SizedBox(
-              width: 158,
-              height: 111,
-              child: Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text("Conversations",
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Colors.black,
-                        // fontWeight: FontWeight.w500,
-                      )))))));
+        color: Colors.white,
+        child: (InkWell(
+            splashColor: Colors.blue.withAlpha(30),
+            onTap: () {
+              debugPrint('Tapped');
+            },
+            child: const SizedBox(
+                width: 158,
+                height: 111,
+                child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Text("Conversations",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.black,
+                          // fontWeight: FontWeight.w500,
+                        )))))));
+  }
 }
 
 Widget transactionTitle() {
