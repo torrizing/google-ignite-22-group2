@@ -117,32 +117,27 @@ class DeliveryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        // elevation: 2,
+        elevation: 2,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-          side: const BorderSide(
-            color: Colors.grey,
-            width: .3,
-          ),
-        ),
-        color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            side: const BorderSide(color: Colors.grey, width: .3)),
         child: (InkWell(
             splashColor: Colors.blue.withAlpha(30),
             onTap: () {
               debugPrint('Delivery Tapped');
               nextScreen(context, const DeliveryPage());
             },
-            child: const SizedBox(
-                width: 158,
-                height: 111,
-                child: Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Text("Incoming Delivery",
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Colors.black,
-                          // fontWeight: FontWeight.w500,
-                        )))))));
+            child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Image.asset("assets/images/ninjavan.png"),
+                    const SizedBox(
+                      height: 13,
+                    ),
+                    const Text("Delivery Information")
+                  ],
+                )))));
   }
 }
 
@@ -152,31 +147,27 @@ class ChatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        // elevation: 2,
+        elevation: 2,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-          side: const BorderSide(
-            color: Colors.grey,
-            width: .3,
-          ),
-        ),
-        color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            side: const BorderSide(color: Colors.grey, width: .3)),
         child: (InkWell(
             splashColor: Colors.blue.withAlpha(30),
             onTap: () {
-              debugPrint('Tapped');
+              debugPrint('Delivery Tapped');
+              nextScreen(context, const DeliveryPage());
             },
-            child: const SizedBox(
-                width: 158,
-                height: 111,
-                child: Padding(
-                    padding: EdgeInsets.all(20.0),
-                    child: Text("Conversations",
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Colors.black,
-                          // fontWeight: FontWeight.w500,
-                        )))))));
+            child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Image.asset("assets/images/carousell.png", width: 35),
+                    const SizedBox(
+                      height: 13,
+                    ),
+                    const Text("Messages")
+                  ],
+                )))));
   }
 }
 
