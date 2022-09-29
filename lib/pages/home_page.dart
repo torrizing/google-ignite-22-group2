@@ -20,11 +20,22 @@ Widget cardTitle() {
   return Container(
       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             padding: const EdgeInsets.only(bottom: 40),
               child: const Text("Hey, Food Bank!",  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
-          )
+          ),
+
+        Container(
+          padding: const EdgeInsets.only(bottom: 40),
+          child: const CircleAvatar(
+            radius: 20,
+            backgroundColor: Colors.green,
+            child: Text('FB'),
+          ),
+        )
         ],
       )
   );
@@ -109,18 +120,18 @@ Widget deliveryCard() {
           onTap: () {
             debugPrint('Delivery Tapped');
           },
-          child: const SizedBox(
-              width: 158,
-              height: 111,
-              child: Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text("Incoming Delivery",
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Colors.black,
-                        // fontWeight: FontWeight.w500,
-                      )))
-          )
+        child: const SizedBox(
+            width: 158,
+            height: 111,
+            child: Padding(
+                padding: EdgeInsets.all(20.0),
+                child: Text("Incoming Delivery",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Colors.black,
+                      // fontWeight: FontWeight.w500,
+                    )))
+        )
       ))
   );
 }
