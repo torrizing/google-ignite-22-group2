@@ -18,11 +18,11 @@ class HomePage extends StatelessWidget {
 
 Widget cardTitle() {
   return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
       child: Row(
         children: [
           Container(
-            padding: const EdgeInsets.only(bottom: 8),
+            padding: const EdgeInsets.only(bottom: 40),
               child: const Text("Hey, Food Bank!",  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
           )
         ],
@@ -41,17 +41,25 @@ Widget cardComponent() {
           onTap: () {
             debugPrint('Tapped');
           },
-          child: const SizedBox(
+          child: SizedBox(
               width: 330,
               height: 180,
-              child: Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text("\$3421.75",
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                      )))))));
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Text("Spending", style: TextStyle(fontSize: 15, color: Colors.white,
+                    fontWeight: FontWeight.w300,)),
+
+                  Text("\$3421.75", style: TextStyle(fontSize: 30, color: Colors.white,
+                    fontWeight: FontWeight.w500,)),
+
+                  Text("15% increase from last month", style: TextStyle(fontSize: 15, color: Colors.white,
+                    fontWeight: FontWeight.w300,)),
+                ],
+              )
+          )
+      )
+      ));
 }
 
 Widget servicesTitle() {
@@ -95,8 +103,7 @@ Widget deliveryCard() {
         color: Colors.grey,
         width: .3,
       ),),
-    // shadowColor: Colors.black,
-    // color: Colors.transparent
+    color: Colors.white,
       child: (InkWell(
           splashColor: Colors.blue.withAlpha(30),
           onTap: () {
@@ -126,8 +133,7 @@ Widget chatCard() {
           color: Colors.grey,
           width: .3,
         ),),
-      // shadowColor: Colors.black,
-      // color: Colors.transparent
+      color: Colors.white,
       child: (InkWell(
           splashColor: Colors.blue.withAlpha(30),
           onTap: () {
@@ -178,32 +184,28 @@ Widget transactionContent() {
     // padding: const EdgeInsets.all(32),
       padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-              child: const CircleAvatar(
-                  backgroundColor: Colors.black,
-                  child: Text("JD")
-              )
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: const [
+          CircleAvatar(
+            radius: 35,
+            backgroundColor: Colors.black,
+            child: Text('JD'),
           ),
-          Container(
-              child: const CircleAvatar(
-                backgroundColor: Colors.black,
-                child: Text("JD")
-              )
+          CircleAvatar(
+            radius: 35,
+            backgroundColor: Colors.black,
+            child: Text('JD'),
           ),
-          Container(
-              child: const CircleAvatar(
-                  backgroundColor: Colors.black,
-                  child: Text("JD")
-              )
+          CircleAvatar(
+            radius: 35,
+            backgroundColor: Colors.black,
+            child: Text('JD'),
           ),
-          Container(
-              child: const CircleAvatar(
-              backgroundColor: Colors.black,
-              child: Text("JD")
-  )
-          ),
+          CircleAvatar(
+            radius: 35,
+            backgroundColor: Colors.black,
+            child: Text('JD'),
+          )
         ],
       )
   );
