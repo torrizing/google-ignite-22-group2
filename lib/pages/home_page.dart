@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/widget/chat_card.dart';
-import 'package:google_ignite_app/widget/map_card.dart';
-import '../../widget/delivery_card.dart';
+import 'package:google_ignite_app/widget/services/chat_card.dart';
+import 'package:google_ignite_app/widget/services/management_card.dart';
+import 'package:google_ignite_app/widget/services/map_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -99,14 +99,12 @@ Widget servicesTitle() {
 
 Widget servicesCard() {
   return Container(
-    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-    height: 150.0,
-    child: ListView(
-      // This next line does the trick.
-      scrollDirection: Axis.horizontal,
-      children: const <Widget>[DeliveryCard(), ChatCard(), MapCard()],
-    ),
-  );
+      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+      height: 150.0,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: const [ManagementCard(), ChatCard(), MapCard()],
+      ));
 }
 
 Widget transactionTitle() {

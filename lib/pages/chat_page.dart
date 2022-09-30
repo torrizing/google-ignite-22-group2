@@ -35,12 +35,12 @@ class _ChatDataState extends State<ChatData> {
         Container(
           height: 50,
           color: Colors.amber[600],
-          child: const Center(child: Text('Joshua')),
+          child: const Center(child: Text('chat A')),
         ),
         Container(
           height: 50,
           color: Colors.amber[500],
-          child: const Center(child: Text('xxx')),
+          child: const Center(child: Text('chat B')),
         ),
       ],
     );
