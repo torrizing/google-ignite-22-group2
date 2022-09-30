@@ -9,12 +9,12 @@ class SettingsPage extends StatelessWidget {
       decoration: const BoxDecoration(color: Colors.white),
       child: const Center(
         child: Text(
-          'Settings Page',
-          // textDirection: TextDirection.ltr,
-          // style: TextStyle(
-          //   fontSize: 32,
-          //   color: Colors.black87,
-          // ),
+          'Hello World',
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+            fontSize: 32,
+            color: Colors.black87,
+          ),
         ),
       ),
     );

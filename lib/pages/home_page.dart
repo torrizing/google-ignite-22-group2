@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:google_ignite_app/pages/settings_page.dart';
 import 'package:google_ignite_app/widget/services/chat_card.dart';
 import 'package:google_ignite_app/widget/services/management_card.dart';
 import 'package:google_ignite_app/widget/services/map_card.dart';
+import 'package:google_ignite_app/widget/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,7 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      cardTitle(),
+      const CardTitle(),
       cardComponent(),
       servicesTitle(),
       servicesCard(),
@@ -19,29 +21,40 @@ class HomePage extends StatelessWidget {
   }
 }
 
-Widget cardTitle() {
-  return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-              padding: const EdgeInsets.only(bottom: 40),
-              child: const Text(
-                "Hey, Food Bank!",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-              )),
-          Container(
-            padding: const EdgeInsets.only(bottom: 40),
-            child: const CircleAvatar(
-              radius: 20,
-              backgroundColor: Colors.green,
-              child: Text('FB'),
-            ),
-          )
-        ],
-      ));
+class CardTitle extends StatelessWidget {
+  const CardTitle({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+                padding: const EdgeInsets.only(bottom: 40),
+                child: const Text(
+                  "Hey, Food Bank!",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                )),
+            Container(
+                padding: const EdgeInsets.only(bottom: 40),
+                child: (InkWell(
+                  splashColor: Colors.blue.withAlpha(30),
+                  onTap: () {
+                    debugPrint('Profile Tapped');
+                    // nextScreen(context, const SettingsPage());
+                  },
+                  child: const CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.green,
+                    child: Text('FB'),
+                  ),
+                )))
+          ],
+        ));
+  }
 }
 
 Widget cardComponent() {
