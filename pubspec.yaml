@@ -39,6 +39,7 @@ dependencies:
   english_words: ^4.0.0
   camera: ^0.10.0+1
   shared_preferences: ^2.0.15
+  camera_avfoundation: ^0.9.8+6
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +69,7 @@ flutter:
     - assets/images/joshua.jpeg
     - assets/images/login.png
     - assets/images/welcome.png
+    - assets/images/map.jpg
     - assets/images/carousell.png
   #   - images/a_dot_ham.jpeg
 

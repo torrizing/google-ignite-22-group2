@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_ignite_app/pages/bottomNavigation/chat_page.dart';
 import 'package:google_ignite_app/pages/delivery_page.dart';
 import 'package:google_ignite_app/widget/widgets.dart';
 
@@ -155,7 +156,7 @@ class ChatCard extends StatelessWidget {
             splashColor: Colors.blue.withAlpha(30),
             onTap: () {
               debugPrint('Delivery Tapped');
-              nextScreen(context, const DeliveryPage());
+              nextScreen(context, const ChatPage());
             },
             child: Padding(
                 padding: const EdgeInsets.all(20.0),
@@ -165,7 +166,7 @@ class ChatCard extends StatelessWidget {
                     const SizedBox(
                       height: 13,
                     ),
-                    const Text("Messages")
+                    const Text("Conversations")
                   ],
                 )))));
   }

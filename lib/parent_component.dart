@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/pages/chat_page.dart';
+import 'package:google_ignite_app/pages/bottomNavigation/chat_page.dart';
 import 'package:google_ignite_app/pages/home_page.dart';
-import 'package:google_ignite_app/pages/settings_page.dart';
+import 'package:google_ignite_app/pages/bottomNavigation/settings_page.dart';
 
-class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
+class ParentComponent extends StatefulWidget {
+  const ParentComponent({super.key});
 
   @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
+  State<ParentComponent> createState() => _ParentComponentState();
 }
 
-class _BottomNavigationState extends State<BottomNavigation> {
+class _ParentComponentState extends State<ParentComponent> {
   int _selectedIndex = 0;
 
   // *** Pages ***

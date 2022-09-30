@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DeliveryPage extends StatelessWidget {
-  const DeliveryPage({super.key});
+class MapPage extends StatelessWidget {
+  const MapPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,18 +14,18 @@ class DeliveryPage extends StatelessWidget {
             ),
             elevation: 0,
             backgroundColor: Colors.white),
-        body: const DeliverySchedule());
+        body: const MapData());
   }
 }
 
-class DeliverySchedule extends StatefulWidget {
-  const DeliverySchedule({super.key});
+class MapData extends StatefulWidget {
+  const MapData({super.key});
 
   @override
-  State<DeliverySchedule> createState() => _DeliveryScheduleState();
+  State<MapData> createState() => _MapDataState();
 }
 
-class _DeliveryScheduleState extends State<DeliverySchedule> {
+class _MapDataState extends State<MapData> {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -34,17 +34,17 @@ class _DeliveryScheduleState extends State<DeliverySchedule> {
         Container(
           height: 50,
           color: Colors.amber[600],
-          child: const Center(child: Text('Entry A')),
+          child: const Center(child: Text('MAP A')),
         ),
         Container(
           height: 50,
           color: Colors.amber[500],
-          child: const Center(child: Text('Entry B')),
+          child: const Center(child: Text('MAP B')),
         ),
         Container(
           height: 50,
           color: Colors.amber[100],
-          child: const Center(child: Text('Entry C')),
+          child: const Center(child: Text('MAP C')),
         ),
       ],
     );

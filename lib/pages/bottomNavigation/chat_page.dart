@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class DeliveryPage extends StatelessWidget {
-  const DeliveryPage({super.key});
+class ChatPage extends StatelessWidget {
+  const ChatPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,18 +14,18 @@ class DeliveryPage extends StatelessWidget {
             ),
             elevation: 0,
             backgroundColor: Colors.white),
-        body: const DeliverySchedule());
+        body: const ChatData());
   }
 }
 
-class DeliverySchedule extends StatefulWidget {
-  const DeliverySchedule({super.key});
+class ChatData extends StatefulWidget {
+  const ChatData({super.key});
 
   @override
-  State<DeliverySchedule> createState() => _DeliveryScheduleState();
+  State<ChatData> createState() => _ChatDataState();
 }
 
-class _DeliveryScheduleState extends State<DeliverySchedule> {
+class _ChatDataState extends State<ChatData> {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -34,17 +34,12 @@ class _DeliveryScheduleState extends State<DeliverySchedule> {
         Container(
           height: 50,
           color: Colors.amber[600],
-          child: const Center(child: Text('Entry A')),
+          child: const Center(child: Text('Chat A')),
         ),
         Container(
           height: 50,
           color: Colors.amber[500],
-          child: const Center(child: Text('Entry B')),
-        ),
-        Container(
-          height: 50,
-          color: Colors.amber[100],
-          child: const Center(child: Text('Entry C')),
+          child: const Center(child: Text('Chat B')),
         ),
       ],
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/bottom_navigation.dart';
+import 'package:google_ignite_app/parent_component.dart';
 
 void main() => runApp(const MyApp());
 
@@ -19,6 +19,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: BottomNavigation());
+        debugShowCheckedModeBanner: false, home: ParentComponent());
   }
 }
