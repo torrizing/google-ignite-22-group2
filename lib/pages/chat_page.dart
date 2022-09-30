@@ -29,20 +29,16 @@ class ChatData extends StatefulWidget {
 class _ChatDataState extends State<ChatData> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return ListView.separated(
       padding: const EdgeInsets.all(8),
-      children: <Widget>[
-        Container(
+      itemCount: 3,
+      itemBuilder: (BuildContext context, int index) {
+        return const SizedBox(
           height: 50,
-          color: Colors.amber[600],
-          child: const Center(child: Text('chat A')),
-        ),
-        Container(
-          height: 50,
-          color: Colors.amber[500],
-          child: const Center(child: Text('chat B')),
-        ),
-      ],
+          child: Center(child: Text('John Doe')),
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) => const Divider(),
     );
   }
 }

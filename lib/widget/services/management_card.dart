@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/pages/delivery_page.dart';
+import 'package:google_ignite_app/pages/management_page.dart';
 import 'package:google_ignite_app/widget/widgets.dart';
 
 class ManagementCard extends StatelessWidget {

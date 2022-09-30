@@ -28,25 +28,16 @@ class MapData extends StatefulWidget {
 class _MapDataState extends State<MapData> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return ListView.separated(
       padding: const EdgeInsets.all(8),
-      children: <Widget>[
-        Container(
+      itemCount: 6,
+      itemBuilder: (BuildContext context, int index) {
+        return const SizedBox(
           height: 50,
-          color: Colors.amber[600],
-          child: const Center(child: Text('MAP A')),
-        ),
-        Container(
-          height: 50,
-          color: Colors.amber[500],
-          child: const Center(child: Text('MAP B')),
-        ),
-        Container(
-          height: 50,
-          color: Colors.amber[100],
-          child: const Center(child: Text('MAP C')),
-        ),
-      ],
+          child: Center(child: Text('Map A')),
+        );
+      },
+      separatorBuilder: (BuildContext context, int index) => const Divider(),
     );
   }
 }
