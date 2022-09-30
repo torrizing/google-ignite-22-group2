@@ -6,6 +6,7 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
             iconTheme: const IconThemeData(color: Colors.black),
             title: const Text(
