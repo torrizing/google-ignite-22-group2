@@ -17,7 +17,7 @@ class ChatCard extends StatelessWidget {
             child: (InkWell(
                 splashColor: Colors.blue.withAlpha(30),
                 onTap: () {
-                  debugPrint('Conversations Tapped');
+                  debugPrint('Chat Tapped');
                   nextScreen(context, const ChatPage());
                 },
                 child: Padding(
@@ -32,7 +32,7 @@ class ChatCard extends StatelessWidget {
                         const SizedBox(
                           height: 13,
                         ),
-                        const Text("Conversations")
+                        const Text("Chat")
                       ],
                     ))))));
   }

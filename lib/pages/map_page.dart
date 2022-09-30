@@ -9,8 +9,8 @@ class MapPage extends StatelessWidget {
         appBar: AppBar(
             iconTheme: const IconThemeData(color: Colors.black),
             title: const Text(
-              'Hey, Food Bank!',
-              style: TextStyle(color: Colors.transparent),
+              'Map',
+              style: TextStyle(color: Colors.black),
             ),
             elevation: 0,
             backgroundColor: Colors.white),
