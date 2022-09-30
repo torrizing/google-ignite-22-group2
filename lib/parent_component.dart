@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/pages/bottomNavigation/chat_page.dart';
 import 'package:google_ignite_app/pages/home_page.dart';
-import 'package:google_ignite_app/pages/bottomNavigation/settings_page.dart';
+import 'package:google_ignite_app/pages/settings_page.dart';
 
 class ParentComponent extends StatefulWidget {
   const ParentComponent({super.key});
@@ -14,11 +13,7 @@ class _ParentComponentState extends State<ParentComponent> {
   int _selectedIndex = 0;
 
   // *** Pages ***
-  static const List<Widget> _pages = <Widget>[
-    HomePage(),
-    ChatPage(),
-    SettingsPage()
-  ];
+  static const List<Widget> _pages = <Widget>[HomePage(), SettingsPage()];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -47,8 +42,6 @@ class _ParentComponentState extends State<ParentComponent> {
               icon: Icon(Icons.home_rounded),
               label: 'Home',
             ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.textsms_rounded), label: ''),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings_rounded),
               label: '',

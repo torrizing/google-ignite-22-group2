@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/pages/bottomNavigation/chat_page.dart';
-import 'package:google_ignite_app/pages/delivery_page.dart';
-import 'package:google_ignite_app/widget/widgets.dart';
+import 'package:google_ignite_app/widget/chat_card.dart';
+import 'package:google_ignite_app/widget/map_card.dart';
+import '../../widget/delivery_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -88,88 +88,25 @@ Widget servicesTitle() {
       // padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
       child: Row(
-        children: [
-          Container(
-              // padding: const EdgeInsets.only(bottom: 8),
-              child: const Text(
+        children: const [
+          Text(
             "Services",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ))
+          )
         ],
       ));
 }
 
 Widget servicesCard() {
   return Container(
-      // padding: const EdgeInsets.all(32),
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: const [
-          DeliveryCard(),
-          ChatCard(),
-        ],
-      ));
-}
-
-class DeliveryCard extends StatelessWidget {
-  const DeliveryCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-            side: const BorderSide(color: Colors.grey, width: .3)),
-        child: (InkWell(
-            splashColor: Colors.blue.withAlpha(30),
-            onTap: () {
-              debugPrint('Delivery Tapped');
-              nextScreen(context, const DeliveryPage());
-            },
-            child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    Image.asset("assets/images/ninjavan.png"),
-                    const SizedBox(
-                      height: 13,
-                    ),
-                    const Text("Delivery Information")
-                  ],
-                )))));
-  }
-}
-
-class ChatCard extends StatelessWidget {
-  const ChatCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-            side: const BorderSide(color: Colors.grey, width: .3)),
-        child: (InkWell(
-            splashColor: Colors.blue.withAlpha(30),
-            onTap: () {
-              debugPrint('Delivery Tapped');
-              nextScreen(context, const ChatPage());
-            },
-            child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  children: [
-                    Image.asset("assets/images/carousell.png", width: 35),
-                    const SizedBox(
-                      height: 13,
-                    ),
-                    const Text("Conversations")
-                  ],
-                )))));
-  }
+    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+    height: 150.0,
+    child: ListView(
+      // This next line does the trick.
+      scrollDirection: Axis.horizontal,
+      children: const <Widget>[DeliveryCard(), ChatCard(), MapCard()],
+    ),
+  );
 }
 
 Widget transactionTitle() {

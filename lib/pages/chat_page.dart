@@ -6,6 +6,7 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         appBar: AppBar(
             iconTheme: const IconThemeData(color: Colors.black),
             title: const Text(
@@ -34,12 +35,12 @@ class _ChatDataState extends State<ChatData> {
         Container(
           height: 50,
           color: Colors.amber[600],
-          child: const Center(child: Text('Chat A')),
+          child: const Center(child: Text('Joshua')),
         ),
         Container(
           height: 50,
           color: Colors.amber[500],
-          child: const Center(child: Text('Chat B')),
+          child: const Center(child: Text('xxx')),
         ),
       ],
     );
