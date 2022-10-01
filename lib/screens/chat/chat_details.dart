@@ -98,10 +98,6 @@ class _ChatDetailsState extends State<ChatDetails> {
                       ],
                     ),
                   ),
-                  const Icon(
-                    Icons.settings,
-                    color: Colors.black54,
-                  ),
                 ],
               ),
             ),
@@ -127,12 +123,16 @@ class _ChatDetailsState extends State<ChatDetails> {
                         borderRadius: BorderRadius.circular(20),
                         color: (messages[index].messageType == "receiver"
                             ? Colors.grey.shade200
-                            : Colors.blue[200]),
+                            : Colors.blue[500]),
                       ),
                       padding: const EdgeInsets.all(16),
                       child: Text(
                         messages[index].messageContent,
-                        style: const TextStyle(fontSize: 15),
+                        style: TextStyle(
+                            fontSize: 15,
+                            color: (messages[index].messageType == "sender")
+                                ? Colors.white
+                                : Colors.black),
                       ),
                     ),
                   ),
@@ -179,23 +179,6 @@ class _ChatDetailsState extends State<ChatDetails> {
 
                               _controller.clear();
                             })),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    SizedBox(
-                      width: 40.0,
-                      child: FloatingActionButton(
-                        onPressed: () {},
-                        heroTag: 'btn2',
-                        backgroundColor: Colors.black,
-                        elevation: 0,
-                        child: const Icon(
-                          Icons.send,
-                          color: Colors.white,
-                          size: 18,
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),
