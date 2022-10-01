@@ -35,7 +35,7 @@ class CardTitle extends StatelessWidget {
             Container(
                 padding: const EdgeInsets.only(bottom: 40),
                 child: const Text(
-                  "Hey, John!",
+                  "Hey, Food Bank!",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 )),
             Container(
@@ -49,7 +49,7 @@ class CardTitle extends StatelessWidget {
                   child: const CircleAvatar(
                     radius: 20,
                     backgroundColor: Colors.green,
-                    child: Text('JD'),
+                    child: Text('FB'),
                   ),
                 )))
           ],

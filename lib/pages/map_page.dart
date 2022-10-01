@@ -1,7 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import '../src/locations.dart' as locations;
 
-class MapPage extends StatelessWidget {
+class MapPage extends StatefulWidget {
   const MapPage({super.key});
+
+  @override
+  State<MapPage> createState() => _MapPageState();
+}
+
+class _MapPageState extends State<MapPage> {
+  final Map<String, Marker> _markers = {};
+  Future<void> _onMapCreated(GoogleMapController controller) async {
+    final googleOffices = await locations.getGoogleOffices();
+    setState(() {
+      _markers.clear();
+      for (final office in googleOffices.offices) {
+        final marker = Marker(
+          markerId: MarkerId(office.name),
+          position: LatLng(office.lat, office.lng),
+          infoWindow: InfoWindow(
+            title: office.name,
+            snippet: office.address,
+          ),
+        );
+        _markers[office.name] = marker;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,30 +41,13 @@ class MapPage extends StatelessWidget {
             ),
             elevation: 0,
             backgroundColor: Colors.white),
-        body: const MapData());
-  }
-}
-
-class MapData extends StatefulWidget {
-  const MapData({super.key});
-
-  @override
-  State<MapData> createState() => _MapDataState();
-}
-
-class _MapDataState extends State<MapData> {
-  @override
-  Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: const EdgeInsets.all(8),
-      itemCount: 6,
-      itemBuilder: (BuildContext context, int index) {
-        return const SizedBox(
-          height: 50,
-          child: Center(child: Text('Map A')),
-        );
-      },
-      separatorBuilder: (BuildContext context, int index) => const Divider(),
-    );
+        body: GoogleMap(
+          onMapCreated: _onMapCreated,
+          initialCameraPosition: const CameraPosition(
+            target: LatLng(0, 0),
+            zoom: 2,
+          ),
+          markers: _markers.values.toSet(),
+        ));
   }
 }
