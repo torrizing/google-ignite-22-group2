@@ -27,7 +27,7 @@ class _ParentComponentState extends State<ParentComponent> {
       backgroundColor: Colors.white,
       appBar: AppBar(
           title: const Text(
-            'Hey, Food Bank!',
+            '',
             style: TextStyle(color: Colors.transparent),
           ),
           elevation: 0,

@@ -33,13 +33,13 @@ class CardTitle extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-                padding: const EdgeInsets.only(bottom: 40),
+                padding: const EdgeInsets.only(bottom: 30),
                 child: const Text(
                   "Hey, Food Bank!",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 )),
             Container(
-                padding: const EdgeInsets.only(bottom: 40),
+                padding: const EdgeInsets.only(bottom: 30),
                 child: (InkWell(
                   splashColor: Colors.blue.withAlpha(30),
                   onTap: () {

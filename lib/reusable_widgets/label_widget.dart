@@ -7,7 +7,7 @@ class LabelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
+        padding: const EdgeInsets.only(top: 40, left: 50, bottom: 10),
         child: Row(
           children: [
             Expanded(
