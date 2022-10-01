@@ -44,9 +44,11 @@ class _ChatDataState extends State<ChatData> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
+    return SafeArea(
+        child:
+            Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
       Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
         child: CupertinoTextField(
           placeholder: "Message...",
           controller: _controller,
@@ -57,8 +59,6 @@ class _ChatDataState extends State<ChatData> {
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  // Retrieve the text the that user has entered by using the
-                  // TextEditingController.
                   content: Text(value),
                 );
               },
@@ -66,6 +66,6 @@ class _ChatDataState extends State<ChatData> {
           },
         ),
       )
-    ]);
+    ]));
   }
 }
