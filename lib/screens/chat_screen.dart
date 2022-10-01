@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/model/chat_user.dart';
-import 'package:google_ignite_app/screens/all_conversations.dart';
+import 'package:google_ignite_app/screens/conversation_list.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -37,9 +36,9 @@ class _ChatDataState extends State<ChatData> {
         imageURL: "assets/images/joshua.jpeg",
         time: "Now"),
     ChatUsers(
-        name: "John Doe",
-        messageText: "Awesome Setup",
-        imageURL: "assets/images/joshua.jpeg",
+        name: "John ???",
+        messageText: "!!! Setup",
+        imageURL: "assets/images/carousell.png",
         time: "Now")
   ];
 
@@ -68,34 +67,48 @@ class _ChatDataState extends State<ChatData> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child:
-            Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
-      const SizedBox(
-        height: 20,
-      ),
-      Text(text),
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: CupertinoTextField(
-          onChanged: (value) => userMsg = value,
-          placeholder: "Message...",
-          controller: _controller,
-          onSubmitted: (String value) async {
-            _setText();
-            debugPrint(value);
-            _controller.clear();
-            // showDialog(
-            //   context: context,
-            //   builder: (context) {
-            //     return AlertDialog(
-            //       content: Text(value),
-            //     );
-            //   },
-            // );
-          },
-        ),
-      ),
-    ]));
+    return ListView.builder(
+        itemCount: chatUsers.length,
+        shrinkWrap: true,
+        padding: const EdgeInsets.only(top: 16),
+        physics: const NeverScrollableScrollPhysics(),
+        itemBuilder: (context, index) {
+          return ConversationList(
+            name: chatUsers[index].name,
+            messageText: chatUsers[index].messageText,
+            imageUrl: chatUsers[index].imageURL,
+            time: chatUsers[index].time,
+            isMessageRead: (index == 0 || index == 3) ? true : false,
+          );
+        });
+    // return SafeArea(
+    //     child:
+    //         Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
+    //   const SizedBox(
+    //     height: 20,
+    //   ),
+    //   Text(text),
+    //   Padding(
+    //     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+    //     child: CupertinoTextField(
+    //       onChanged: (value) => userMsg = value,
+    //       placeholder: "Message...",
+    //       controller: _controller,
+    //       onSubmitted: (String value) async {
+    //         _setText();
+    //         debugPrint(value);
+    //         _controller.clear();
+    //         // showDialog(
+    //         //   context: context,
+    //         //   builder: (context) {
+    //         //     return AlertDialog(
+    //         //       content: Text(value),
+    //         //     );
+    //         //   },
+    //         // );
+    //       },
+    //     ),
+    //   ),
+    // ]));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_ignite_app/reusable_widgets/navigation.dart';
 import 'package:google_ignite_app/screens/chat_screen.dart';
 import 'package:google_ignite_app/screens/management_screen.dart';
 import 'package:google_ignite_app/screens/map_screen.dart';
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
       const LabelWidget(textTitle: "Services"),
       servicesCard(),
       const LabelWidget(textTitle: "Recent Chats"),
-      transactionContent(),
+      const TransactionContent(),
     ]);
   }
 }
@@ -133,31 +134,41 @@ Widget servicesCard() {
       ));
 }
 
-Widget transactionContent() {
-  return Container(
-      // padding: const EdgeInsets.all(32),
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: const [
-          SizedBox(
-              height: 70,
-              width: 70,
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/joshua.jpeg'),
-              )),
-          SizedBox(
-              height: 70,
-              width: 70,
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/welcome.png'),
-              )),
-          SizedBox(
-              height: 70,
-              width: 70,
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/login.png'),
-              ))
-        ],
-      ));
+class TransactionContent extends StatelessWidget {
+  const TransactionContent({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        // padding: const EdgeInsets.all(32),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            SizedBox(
+                height: 70,
+                width: 70,
+                child: InkWell(
+                    onTap: () => {
+                          debugPrint("Tapped"),
+                          nextScreen(context, const ChatScreen())
+                        },
+                    child: const CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/joshua.jpeg'),
+                    ))),
+            const SizedBox(
+                height: 70,
+                width: 70,
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/welcome.png'),
+                )),
+            const SizedBox(
+                height: 70,
+                width: 70,
+                child: CircleAvatar(
+                  backgroundImage: AssetImage('assets/images/login.png'),
+                ))
+          ],
+        ));
+  }
 }
