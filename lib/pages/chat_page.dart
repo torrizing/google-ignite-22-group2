@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
@@ -27,18 +28,44 @@ class ChatData extends StatefulWidget {
 }
 
 class _ChatDataState extends State<ChatData> {
+  late TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      padding: const EdgeInsets.all(8),
-      itemCount: 3,
-      itemBuilder: (BuildContext context, int index) {
-        return const SizedBox(
-          height: 50,
-          child: Center(child: Text('John Doe')),
-        );
-      },
-      separatorBuilder: (BuildContext context, int index) => const Divider(),
-    );
+    return Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+        child: CupertinoTextField(
+          placeholder: "Message...",
+          controller: _controller,
+          onSubmitted: (String value) async {
+            debugPrint(value);
+            _controller.clear();
+            showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  // Retrieve the text the that user has entered by using the
+                  // TextEditingController.
+                  content: Text(value),
+                );
+              },
+            );
+          },
+        ),
+      )
+    ]);
   }
 }

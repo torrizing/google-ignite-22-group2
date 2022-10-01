@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
       cardComponent(),
       const LabelWidget(textTitle: "Services"),
       servicesCard(),
-      const LabelWidget(textTitle: "Recent"),
+      const LabelWidget(textTitle: "Recent Chats"),
       transactionContent(),
     ]);
   }
