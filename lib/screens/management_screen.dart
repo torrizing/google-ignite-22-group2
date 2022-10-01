@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ManagementPage extends StatelessWidget {
-  const ManagementPage({super.key});
+class ManagementScreen extends StatelessWidget {
+  const ManagementScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

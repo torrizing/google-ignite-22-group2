@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../src/locations.dart' as locations;
 
-class MapPage extends StatefulWidget {
-  const MapPage({super.key});
+class MapScreen extends StatefulWidget {
+  const MapScreen({super.key});
 
   @override
-  State<MapPage> createState() => _MapPageState();
+  State<MapScreen> createState() => _MapScreenState();
 }
 
-class _MapPageState extends State<MapPage> {
+class _MapScreenState extends State<MapScreen> {
   final Map<String, Marker> _markers = {};
   Future<void> _onMapCreated(GoogleMapController controller) async {
     final googleOffices = await locations.getGoogleOffices();

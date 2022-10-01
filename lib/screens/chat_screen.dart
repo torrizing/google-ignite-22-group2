@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+class ChatScreen extends StatelessWidget {
+  const ChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,13 +48,14 @@ class _ChatDataState extends State<ChatData> {
         child:
             Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
       Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: CupertinoTextField(
           placeholder: "Message...",
           controller: _controller,
           onSubmitted: (String value) async {
             debugPrint(value);
             _controller.clear();
+
             showDialog(
               context: context,
               builder: (context) {

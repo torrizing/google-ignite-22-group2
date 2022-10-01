@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/pages/chat_page.dart';
-import 'package:google_ignite_app/pages/management_page.dart';
-import 'package:google_ignite_app/pages/map_page.dart';
+import 'package:google_ignite_app/screens/chat_screen.dart';
+import 'package:google_ignite_app/screens/management_screen.dart';
+import 'package:google_ignite_app/screens/map_screen.dart';
 import 'package:google_ignite_app/reusable_widgets/card_widget.dart';
 import 'package:google_ignite_app/reusable_widgets/label_widget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +111,7 @@ Widget servicesCard() {
                 size: 50,
                 color: Colors.black,
               ),
-              pageToGo: ManagementPage()),
+              pageToGo: ManagementScreen()),
           SizedBox(width: 15),
           CardWidget(
             cardTitle: 'Chat',
@@ -120,13 +120,13 @@ Widget servicesCard() {
               size: 50,
               color: Colors.black,
             ),
-            pageToGo: ChatPage(),
+            pageToGo: ChatScreen(),
           ),
           SizedBox(width: 15),
           CardWidget(
             cardTitle: 'Map',
             cardIcon: Icon(Icons.place, size: 50, color: Colors.black),
-            pageToGo: MapPage(),
+            pageToGo: MapScreen(),
           ),
           SizedBox(width: 50)
         ],

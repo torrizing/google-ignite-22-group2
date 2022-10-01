@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/pages/home_page.dart';
-import 'package:google_ignite_app/pages/settings_page.dart';
+import 'package:google_ignite_app/screens/home_screen.dart';
+import 'package:google_ignite_app/screens/settings_screen.dart';
 
 class ParentComponent extends StatefulWidget {
   const ParentComponent({super.key});
@@ -13,7 +13,7 @@ class _ParentComponentState extends State<ParentComponent> {
   int _selectedIndex = 0;
 
   // *** Pages ***
-  static const List<Widget> _pages = <Widget>[HomePage(), SettingsPage()];
+  static const List<Widget> _pages = <Widget>[HomeScreen(), SettingsScreen()];
 
   void _onItemTapped(int index) {
     setState(() {
