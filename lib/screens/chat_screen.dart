@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_ignite_app/model/chat_user.dart';
+import 'package:google_ignite_app/screens/all_conversations.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -28,6 +30,19 @@ class ChatData extends StatefulWidget {
 }
 
 class _ChatDataState extends State<ChatData> {
+  List<ChatUsers> chatUsers = [
+    ChatUsers(
+        name: "John Doe",
+        messageText: "Awesome Setup",
+        imageURL: "assets/images/joshua.jpeg",
+        time: "Now"),
+    ChatUsers(
+        name: "John Doe",
+        messageText: "Awesome Setup",
+        imageURL: "assets/images/joshua.jpeg",
+        time: "Now")
+  ];
+
   late TextEditingController _controller;
 
   late String userMsg;
