@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       const CardTitle(),
-      cardComponent(),
+      // cardComponent(),
       const LabelWidget(textTitle: "Services"),
       servicesCard(),
       const LabelWidget(textTitle: "Recent Chats"),
