@@ -140,26 +140,24 @@ Widget transactionContent() {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: const [
-          CircleAvatar(
-            radius: 35,
-            backgroundColor: Colors.black,
-            child: Text('JD'),
-          ),
-          CircleAvatar(
-            radius: 35,
-            backgroundColor: Colors.black,
-            child: Text('JD'),
-          ),
-          CircleAvatar(
-            radius: 35,
-            backgroundColor: Colors.black,
-            child: Text('JD'),
-          ),
-          CircleAvatar(
-            radius: 35,
-            backgroundColor: Colors.black,
-            child: Text('JD'),
-          )
+          SizedBox(
+              height: 70,
+              width: 70,
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/joshua.jpeg'),
+              )),
+          SizedBox(
+              height: 70,
+              width: 70,
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/welcome.png'),
+              )),
+          SizedBox(
+              height: 70,
+              width: 70,
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/login.png'),
+              ))
         ],
       ));
 }
