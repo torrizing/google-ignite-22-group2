@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/model/chat_message.dart';
 
@@ -21,6 +22,29 @@ class _ChatDetailsState extends State<ChatDetails> {
     ChatMessage(
         messageContent: "I have excess milo powder", messageType: "receiver"),
   ];
+
+  late TextEditingController _controller;
+  late String userMsg;
+
+  String text = "";
+
+  void _setText() {
+    setState(() {
+      text = userMsg;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -127,6 +151,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                     SizedBox(
                       width: 40.0,
                       child: FloatingActionButton(
+                        heroTag: 'btn1',
                         onPressed: () {},
                         backgroundColor: Colors.black,
                         elevation: 0,
@@ -140,14 +165,16 @@ class _ChatDetailsState extends State<ChatDetails> {
                     const SizedBox(
                       width: 15,
                     ),
-                    const Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Message...",
-                            hintStyle: TextStyle(color: Colors.black54),
-                            border: InputBorder.none),
-                      ),
-                    ),
+                    Expanded(
+                        child: CupertinoTextField.borderless(
+                            onChanged: (value) => userMsg = value,
+                            placeholder: "Message...",
+                            controller: _controller,
+                            onSubmitted: (String value) async {
+                              _setText();
+                              debugPrint(value);
+                              _controller.clear();
+                            })),
                     const SizedBox(
                       width: 15,
                     ),
@@ -155,6 +182,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                       width: 40.0,
                       child: FloatingActionButton(
                         onPressed: () {},
+                        heroTag: 'btn2',
                         backgroundColor: Colors.black,
                         elevation: 0,
                         child: const Icon(

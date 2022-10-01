@@ -47,29 +47,6 @@ class _ChatDataState extends State<ChatData> {
         time: "5h ago")
   ];
 
-  late TextEditingController _controller;
-
-  late String userMsg;
-  String text = "";
-
-  void _setText() {
-    setState(() {
-      text = userMsg;
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -86,35 +63,5 @@ class _ChatDataState extends State<ChatData> {
             isMessageRead: (index == 0 || index == 3) ? true : false,
           );
         });
-
-    // return SafeArea(
-    //     child:
-    //         Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
-    //   const SizedBox(
-    //     height: 20,
-    //   ),
-    //   Text(text),
-    //   Padding(
-    //     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-    //     child: CupertinoTextField(
-    //       onChanged: (value) => userMsg = value,
-    //       placeholder: "Message...",
-    //       controller: _controller,
-    //       onSubmitted: (String value) async {
-    //         _setText();
-    //         debugPrint(value);
-    //         _controller.clear();
-    //         // showDialog(
-    //         //   context: context,
-    //         //   builder: (context) {
-    //         //     return AlertDialog(
-    //         //       content: Text(value),
-    //         //     );
-    //         //   },
-    //         // );
-    //       },
-    //     ),
-    //   ),
-    // ]));
   }
 }
