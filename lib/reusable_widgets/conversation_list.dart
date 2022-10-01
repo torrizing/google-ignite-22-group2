@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_ignite_app/reusable_widgets/navigation.dart';
+import 'package:google_ignite_app/screens/chat/chat_details.dart';
 
 // ignore: must_be_immutable
 class ConversationList extends StatefulWidget {
@@ -24,7 +26,9 @@ class _ConversationListState extends State<ConversationList> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {},
+        onTap: () {
+          nextScreen(context, const ChatDetails());
+        },
         child: Container(
             padding:
                 const EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),

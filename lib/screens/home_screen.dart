@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/reusable_widgets/navigation.dart';
-import 'package:google_ignite_app/screens/chat_screen.dart';
+import 'package:google_ignite_app/screens/chat/chat_screen.dart';
 import 'package:google_ignite_app/screens/management_screen.dart';
 import 'package:google_ignite_app/screens/map_screen.dart';
 import 'package:google_ignite_app/reusable_widgets/card_widget.dart';

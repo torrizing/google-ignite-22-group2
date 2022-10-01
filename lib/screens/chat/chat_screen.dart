@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/model/chat_user.dart';
-import 'package:google_ignite_app/screens/conversation_list.dart';
+import 'package:google_ignite_app/reusable_widgets/conversation_list.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -32,7 +32,7 @@ class _ChatDataState extends State<ChatData> {
   List<ChatUsers> chatUsers = [
     ChatUsers(
         name: "Joshua",
-        messageText: "I have excess milo powder.",
+        messageText: "I have excess milo powder",
         imageURL: "assets/images/joshua.jpeg",
         time: "Now"),
     ChatUsers(
@@ -86,6 +86,7 @@ class _ChatDataState extends State<ChatData> {
             isMessageRead: (index == 0 || index == 3) ? true : false,
           );
         });
+
     // return SafeArea(
     //     child:
     //         Column(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
