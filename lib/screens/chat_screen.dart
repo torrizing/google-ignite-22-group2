@@ -31,15 +31,20 @@ class ChatData extends StatefulWidget {
 class _ChatDataState extends State<ChatData> {
   List<ChatUsers> chatUsers = [
     ChatUsers(
-        name: "John Doe",
-        messageText: "Awesome Setup",
+        name: "Joshua",
+        messageText: "I have excess milo powder.",
         imageURL: "assets/images/joshua.jpeg",
         time: "Now"),
     ChatUsers(
-        name: "John ???",
-        messageText: "!!! Setup",
+        name: "John Doe",
+        messageText: "Do you need anything else?",
         imageURL: "assets/images/carousell.png",
-        time: "Now")
+        time: "3h ago"),
+    ChatUsers(
+        name: "David Dawson",
+        messageText: "Thank you!",
+        imageURL: "assets/images/carousell.png",
+        time: "5h ago")
   ];
 
   late TextEditingController _controller;
