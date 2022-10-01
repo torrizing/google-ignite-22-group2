@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/pages/management_page.dart';
-import 'package:google_ignite_app/widget/widgets.dart';
+import 'package:google_ignite_app/reusable_widgets/navigation.dart';
 
-class ManagementCard extends StatelessWidget {
-  const ManagementCard({super.key});
+class CardWidget extends StatelessWidget {
+  final String cardTitle;
+  final Widget cardIcon;
+  final Widget pageToGo;
+
+  const CardWidget(
+      {super.key,
+      required this.cardTitle,
+      required this.cardIcon,
+      required this.pageToGo});
 
   @override
   Widget build(BuildContext context) {
@@ -17,22 +24,19 @@ class ManagementCard extends StatelessWidget {
             child: (InkWell(
                 splashColor: Colors.blue.withAlpha(30),
                 onTap: () {
-                  debugPrint('Management Tapped');
-                  nextScreen(context, const ManagementPage());
+                  debugPrint('Tapped');
+                  nextScreen(context, pageToGo);
                 },
                 child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          "assets/images/ninjavan.png",
-                          width: 50,
-                        ),
+                        cardIcon,
                         const SizedBox(
                           height: 13,
                         ),
-                        const Text("Management")
+                        Text(cardTitle)
                       ],
                     ))))));
   }

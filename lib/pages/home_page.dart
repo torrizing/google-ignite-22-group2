@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/pages/settings_page.dart';
-import 'package:google_ignite_app/widget/services/chat_card.dart';
-import 'package:google_ignite_app/widget/services/management_card.dart';
-import 'package:google_ignite_app/widget/services/map_card.dart';
-import 'package:google_ignite_app/widget/widgets.dart';
+import 'package:google_ignite_app/pages/chat_page.dart';
+import 'package:google_ignite_app/pages/management_page.dart';
+import 'package:google_ignite_app/pages/map_page.dart';
+import 'package:google_ignite_app/reusable_widgets/card_widget.dart';
+import 'package:google_ignite_app/reusable_widgets/label_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,9 +13,9 @@ class HomePage extends StatelessWidget {
     return Column(children: [
       const CardTitle(),
       cardComponent(),
-      servicesTitle(),
+      const LabelWidget(textTitle: "Services"),
       servicesCard(),
-      transactionTitle(),
+      const LabelWidget(textTitle: "Recent"),
       transactionContent(),
     ]);
   }
@@ -27,7 +27,7 @@ class CardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 1),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -35,7 +35,7 @@ class CardTitle extends StatelessWidget {
             Container(
                 padding: const EdgeInsets.only(bottom: 40),
                 child: const Text(
-                  "Hey, Food Bank!",
+                  "Hey, John!",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 )),
             Container(
@@ -49,7 +49,7 @@ class CardTitle extends StatelessWidget {
                   child: const CircleAvatar(
                     radius: 20,
                     backgroundColor: Colors.green,
-                    child: Text('FB'),
+                    child: Text('JD'),
                   ),
                 )))
           ],
@@ -96,54 +96,41 @@ Widget cardComponent() {
               )))));
 }
 
-Widget servicesTitle() {
-  return Container(
-      // padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
-      child: Row(
-        children: const [
-          Text(
-            "Services",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          )
-        ],
-      ));
-}
-
 Widget servicesCard() {
-  return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+  return SizedBox(
+      // padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
       height: 150.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        children: const [ManagementCard(), ChatCard(), MapCard()],
-      ));
-}
-
-Widget transactionTitle() {
-  return Container(
-    padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
-    child: Row(
-      children: [
-        Expanded(
-          /* 1 */
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              /* 2 */
-              Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                child: const Text(
-                  'Recent Transactions',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
+        children: const [
+          SizedBox(width: 50),
+          CardWidget(
+              cardTitle: 'Management',
+              cardIcon: Icon(
+                Icons.local_shipping,
+                size: 50,
+                color: Colors.black,
               ),
-            ],
+              pageToGo: ManagementPage()),
+          SizedBox(width: 15),
+          CardWidget(
+            cardTitle: 'Chat',
+            cardIcon: Icon(
+              Icons.textsms,
+              size: 50,
+              color: Colors.black,
+            ),
+            pageToGo: ChatPage(),
           ),
-        ),
-      ],
-    ),
-  );
+          SizedBox(width: 15),
+          CardWidget(
+            cardTitle: 'Map',
+            cardIcon: Icon(Icons.place, size: 50, color: Colors.black),
+            pageToGo: MapPage(),
+          ),
+          SizedBox(width: 50)
+        ],
+      ));
 }
 
 Widget transactionContent() {
