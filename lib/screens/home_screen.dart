@@ -5,6 +5,7 @@ import 'package:google_ignite_app/screens/management_screen.dart';
 import 'package:google_ignite_app/screens/map_screen.dart';
 import 'package:google_ignite_app/reusable_widgets/card_widget.dart';
 import 'package:google_ignite_app/reusable_widgets/label_widget.dart';
+import 'package:google_ignite_app/reusable_widgets/line_chart_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,7 +14,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       const CardTitle(),
-      cardComponent(),
+      // lineChart(),
+      // cardComponent(),
       const LabelWidget(textTitle: "Services"),
       servicesCard(),
       const LabelWidget(textTitle: "Recent Chats"),
@@ -58,44 +60,48 @@ class CardTitle extends StatelessWidget {
   }
 }
 
-Widget cardComponent() {
-  return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      shadowColor: Colors.black,
-      color: Colors.black,
-      child: (InkWell(
-          splashColor: Colors.blue.withAlpha(30),
-          onTap: () {
-            debugPrint('Tapped');
-          },
-          child: SizedBox(
-              width: 330,
-              height: 180,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: const [
-                  Text("Spending",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
-                      )),
-                  Text("\$3421.75",
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                      )),
-                  Text("15% increase from last month",
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w300,
-                      )),
-                ],
-              )))));
-}
+// Widget lineChart() {
+//   return LineChartWidget();
+// }
+
+// Widget cardComponent() {
+//   return Card(
+//       elevation: 2,
+//       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+//       shadowColor: Colors.black,
+//       color: Colors.black,
+//       child: (InkWell(
+//           splashColor: Colors.blue.withAlpha(30),
+//           onTap: () {
+//             debugPrint('Tapped');
+//           },
+//           child: SizedBox(
+//               width: 330,
+//               height: 180,
+//               child: Column(
+//                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                 children: const [
+//                   Text("Spending",
+//                       style: TextStyle(
+//                         fontSize: 15,
+//                         color: Colors.white,
+//                         fontWeight: FontWeight.w300,
+//                       )),
+//                   Text("\$3421.75",
+//                       style: TextStyle(
+//                         fontSize: 30,
+//                         color: Colors.white,
+//                         fontWeight: FontWeight.w500,
+//                       )),
+//                   Text("15% increase from last month",
+//                       style: TextStyle(
+//                         fontSize: 15,
+//                         color: Colors.white,
+//                         fontWeight: FontWeight.w300,
+//                       )),
+//                 ],
+//               )))));
+// }
 
 Widget servicesCard() {
   return SizedBox(

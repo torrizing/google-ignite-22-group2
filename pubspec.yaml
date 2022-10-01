@@ -20,6 +20,7 @@ dependencies:
   http: ^0.13.5
   json_serializable: ^6.4.1
   google_maps_flutter: ^2.2.1
+  fl_chart: ^0.55.2
 
 dev_dependencies:
   flutter_test:
