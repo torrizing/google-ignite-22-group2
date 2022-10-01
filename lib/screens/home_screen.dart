@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/reusable_widgets/navigation.dart';
+import 'package:google_ignite_app/screens/chat/chat_details.dart';
 import 'package:google_ignite_app/screens/chat/chat_screen.dart';
 import 'package:google_ignite_app/screens/management_screen.dart';
 import 'package:google_ignite_app/screens/map_screen.dart';
@@ -151,7 +152,7 @@ class TransactionContent extends StatelessWidget {
                 child: InkWell(
                     onTap: () => {
                           debugPrint("Tapped"),
-                          nextScreen(context, const ChatScreen())
+                          nextScreen(context, const ChatDetails())
                         },
                     child: const CircleAvatar(
                       backgroundImage: AssetImage('assets/images/joshua.jpeg'),

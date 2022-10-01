@@ -173,6 +173,10 @@ class _ChatDetailsState extends State<ChatDetails> {
                             onSubmitted: (String value) async {
                               _setText();
                               debugPrint(value);
+                              messages.add(ChatMessage(
+                                  messageContent: value,
+                                  messageType: "sender"));
+
                               _controller.clear();
                             })),
                     const SizedBox(
