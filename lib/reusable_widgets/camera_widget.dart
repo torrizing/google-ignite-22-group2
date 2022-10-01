@@ -1,3 +1,5 @@
+// Camera Plugin
+
 import 'package:flutter/material.dart';
 
 class CameraWidget extends StatefulWidget {
