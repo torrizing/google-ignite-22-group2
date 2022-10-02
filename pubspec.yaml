@@ -72,7 +72,7 @@ flutter_native_splash:
   # To restore Flutter's default white splash screen, run the following command in the terminal:
   # flutter pub run flutter_native_splash:remove
   
-  background_image: "assets/images/carousell.png"
+  background_image: "assets/images/splashscreen.png"
 
   # The image parameter allows you to specify an image used in the splash screen.  It must be a
   # png file and should be sized for 4x pixel density.
