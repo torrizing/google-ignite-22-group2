@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_ignite_app/data/bmi.dart';
+import 'package:google_ignite_app/data/price_point.dart';
+import 'package:google_ignite_app/reusable_widgets/linechart_widget.dart';
 import 'package:google_ignite_app/reusable_widgets/navigation.dart';
 import 'package:google_ignite_app/screens/chat/chat_details.dart';
 import 'package:google_ignite_app/screens/chat/chat_screen.dart';
@@ -14,7 +17,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       const CardTitle(),
-      const LineChart(),
+      const MyChart(title: "Line Chart"),
       const LabelWidget(textTitle: "Services"),
       servicesCard(),
       const LabelWidget(textTitle: "Recent Chats"),
@@ -35,13 +38,13 @@ class CardTitle extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-                padding: const EdgeInsets.only(bottom: 30),
+                padding: const EdgeInsets.only(bottom: 50),
                 child: const Text(
                   "Hey, Food Bank!",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                 )),
             Container(
-                padding: const EdgeInsets.only(bottom: 30),
+                padding: const EdgeInsets.only(bottom: 50),
                 child: (InkWell(
                   splashColor: Colors.blue.withAlpha(30),
                   onTap: () {
@@ -96,20 +99,6 @@ Widget cardComponent() {
                       )),
                 ],
               )))));
-}
-
-class LineChart extends StatelessWidget {
-  const LineChart({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        padding: const EdgeInsets.only(left: 50, right: 50),
-        child: const Image(
-          image: AssetImage('assets/images/chart.png'),
-          width: 800,
-        ));
-  }
 }
 
 Widget servicesCard() {
@@ -189,3 +178,55 @@ class TransactionContent extends StatelessWidget {
         ));
   }
 }
+
+class MyChart extends StatefulWidget {
+  const MyChart({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyChart> createState() => _MyChartState();
+}
+
+class _MyChartState extends State<MyChart> {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 1.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            LineChartWidget(pricePoints),
+            // Column(
+            //   children: industrySectors
+            //       .map<Widget>((sector) => SectorRow(sector))
+            //       .toList(),
+            // ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// class SectorRow extends StatelessWidget {
+//   const SectorRow(this.sector, {Key? key}) : super(key: key);
+//   final Sector sector;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Row(
+//       children: [
+//         SizedBox(
+//           width: 16,
+//           child: CircleAvatar(
+//             backgroundColor: sector.color,
+//           ),
+//         ),
+//         const Spacer(),
+//         Text(sector.title),
+//       ],
+//     );
+//   }
+// }
