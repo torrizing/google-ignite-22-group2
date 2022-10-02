@@ -152,7 +152,10 @@ class _ChatDetailsState extends State<ChatDetails> {
                       width: 40.0,
                       child: FloatingActionButton(
                         heroTag: 'btn1',
-                        onPressed: () {},
+                        onPressed: () {
+                          debugPrint("Tap");
+                          // nextScreen(context, const CameraScreen());
+                        },
                         backgroundColor: Colors.black,
                         elevation: 0,
                         child: const Icon(

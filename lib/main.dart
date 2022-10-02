@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/parent_component.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-// void main() => runApp(const MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
