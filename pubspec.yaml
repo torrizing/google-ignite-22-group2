@@ -44,6 +44,7 @@ flutter:
     - assets/images/carousell.png
     - assets/images/chart.png
     - assets/images/bread.jpeg
+    - assets/images/account.png
     - assets/locations.json
 
 

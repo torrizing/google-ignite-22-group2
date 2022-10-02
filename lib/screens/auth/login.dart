@@ -69,13 +69,16 @@ class LoginPageState extends State<LoginPage> {
       return Container(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Image(
-                image: AssetImage('assets/images/bread.jpeg'),
+                image: AssetImage('assets/images/account.png'),
+                width: 500,
               ),
+              const Padding(padding: EdgeInsets.only(top: 50)),
               SignInButton(
-                Buttons.GoogleDark,
+                Buttons.Google,
+                text: "Continue with Google",
                 mini: false,
                 onPressed: _handleSignIn,
               )
@@ -89,6 +92,7 @@ class LoginPageState extends State<LoginPage> {
     final GoogleSignInAccount? user = _currentUser;
 
     return Scaffold(
+        backgroundColor: Colors.white,
         body: ConstrainedBox(
             constraints: const BoxConstraints.expand(),
             // child: _buildBody(),
