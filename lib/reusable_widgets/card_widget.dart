@@ -15,7 +15,7 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 210.0,
+        width: 200.0,
         child: Card(
             elevation: 2,
             shape: RoundedRectangleBorder(

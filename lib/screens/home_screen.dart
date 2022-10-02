@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       const CardTitle(),
-      // cardComponent(),
+      cardComponent(),
       const LabelWidget(textTitle: "Services"),
       servicesCard(),
       const LabelWidget(textTitle: "Recent Chats"),
@@ -29,7 +29,7 @@ class CardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 1),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -105,7 +105,7 @@ Widget servicesCard() {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: const [
-          SizedBox(width: 50),
+          SizedBox(width: 40),
           CardWidget(
               cardTitle: 'Management',
               cardIcon: Icon(
@@ -142,7 +142,7 @@ class TransactionContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         // padding: const EdgeInsets.all(32),
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
