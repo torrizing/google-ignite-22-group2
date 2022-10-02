@@ -35,7 +35,7 @@ class _ChatDataState extends State<ChatData> {
         name: "Joshua",
         messageText: "I have a tin of milo powder...",
         imageUrl: "assets/images/joshua.jpeg",
-        time: "Now",
+        time: "now",
         isMessageRead: false),
     ChatList(
         name: "Regine",

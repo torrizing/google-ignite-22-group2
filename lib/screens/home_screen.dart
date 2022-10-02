@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       const CardTitle(),
-      // cardComponent(),
+      const LineChart(),
       const LabelWidget(textTitle: "Services"),
       servicesCard(),
       const LabelWidget(textTitle: "Recent Chats"),
@@ -50,8 +50,11 @@ class CardTitle extends StatelessWidget {
                   },
                   child: const CircleAvatar(
                     radius: 20,
-                    backgroundColor: Colors.green,
-                    child: Text('FB'),
+                    backgroundColor: Colors.orange,
+                    child: Text(
+                      'FB',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 )))
           ],
@@ -96,6 +99,20 @@ Widget cardComponent() {
                       )),
                 ],
               )))));
+}
+
+class LineChart extends StatelessWidget {
+  const LineChart({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        padding: const EdgeInsets.only(left: 50, right: 50),
+        child: const Image(
+          image: AssetImage('assets/images/chart.png'),
+          width: 800,
+        ));
+  }
 }
 
 Widget servicesCard() {

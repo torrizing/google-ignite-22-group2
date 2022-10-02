@@ -43,6 +43,7 @@ flutter:
     - assets/images/welcome.png
     - assets/images/map.jpg
     - assets/images/carousell.png
+    - assets/images/chart.png
     - assets/locations.json
 
 
