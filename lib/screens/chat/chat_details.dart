@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/model/chat_message.dart';
+import 'package:google_ignite_app/reusable_widgets/navigation.dart';
 
 class ChatDetails extends StatefulWidget {
   const ChatDetails({super.key});
@@ -154,7 +155,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                         heroTag: 'btn1',
                         onPressed: () {
                           debugPrint("Tap");
-                          // nextScreen(context, const CameraScreen());
+                          nextScreen(context, null);
                         },
                         backgroundColor: Colors.black,
                         elevation: 0,
