@@ -47,7 +47,6 @@ lib/
     |- settings_screen.dart 
   
 |- reusable_widgets/
-
     |- camera_widget.dart
     |- card_widget.dart
     |- label_widget.dart
