@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/reusable_widgets/navigation.dart';
-import 'package:google_ignite_app/screens/chat_screen.dart';
+import 'package:google_ignite_app/screens/chat/chat_details.dart';
+import 'package:google_ignite_app/screens/chat/chat_screen.dart';
 import 'package:google_ignite_app/screens/management_screen.dart';
 import 'package:google_ignite_app/screens/map_screen.dart';
 import 'package:google_ignite_app/reusable_widgets/card_widget.dart';
@@ -16,6 +17,7 @@ class HomeScreen extends StatelessWidget {
       const CardTitle(),
       // lineChart(),
       // cardComponent(),
+      const LineChart(),
       const LabelWidget(textTitle: "Services"),
       servicesCard(),
       const LabelWidget(textTitle: "Recent Chats"),
@@ -30,7 +32,7 @@ class CardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 1),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 1),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -51,8 +53,11 @@ class CardTitle extends StatelessWidget {
                   },
                   child: const CircleAvatar(
                     radius: 20,
-                    backgroundColor: Colors.green,
-                    child: Text('FB'),
+                    backgroundColor: Colors.orange,
+                    child: Text(
+                      'FB',
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 )))
           ],
@@ -103,39 +108,53 @@ class CardTitle extends StatelessWidget {
 //               )))));
 // }
 
+class LineChart extends StatelessWidget {
+  const LineChart({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        padding: const EdgeInsets.only(left: 50, right: 50),
+        child: const Image(
+          image: AssetImage('assets/images/chart.png'),
+          width: 800,
+        ));
+  }
+}
+
 Widget servicesCard() {
   return SizedBox(
       // padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
       height: 150.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        children: const [
-          SizedBox(width: 50),
+        children: [
+          const SizedBox(width: 30),
           CardWidget(
               cardTitle: 'Management',
-              cardIcon: Icon(
+              cardIcon: const Icon(
                 Icons.local_shipping,
                 size: 50,
-                color: Colors.black,
+                color: Colors.grey,
               ),
               pageToGo: ManagementScreen()),
-          SizedBox(width: 15),
-          CardWidget(
+          const SizedBox(width: 15),
+          const CardWidget(
             cardTitle: 'Chat',
             cardIcon: Icon(
               Icons.textsms,
               size: 50,
-              color: Colors.black,
+              color: Colors.grey,
             ),
             pageToGo: ChatScreen(),
           ),
-          SizedBox(width: 15),
-          CardWidget(
+          const SizedBox(width: 15),
+          const CardWidget(
             cardTitle: 'Map',
-            cardIcon: Icon(Icons.place, size: 50, color: Colors.black),
+            cardIcon: Icon(Icons.place, size: 50, color: Colors.grey),
             pageToGo: MapScreen(),
           ),
-          SizedBox(width: 50)
+          const SizedBox(width: 50)
         ],
       ));
 }
@@ -147,7 +166,7 @@ class TransactionContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         // padding: const EdgeInsets.all(32),
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -157,7 +176,7 @@ class TransactionContent extends StatelessWidget {
                 child: InkWell(
                     onTap: () => {
                           debugPrint("Tapped"),
-                          nextScreen(context, const ChatScreen())
+                          nextScreen(context, const ChatDetails())
                         },
                     child: const CircleAvatar(
                       backgroundImage: AssetImage('assets/images/joshua.jpeg'),

@@ -32,7 +32,7 @@ class _ParentComponentState extends State<ParentComponent> {
           ),
           elevation: 0,
           backgroundColor: Colors.white),
-      body: _pages.elementAt(_selectedIndex),
+      body: SingleChildScrollView(child: _pages.elementAt(_selectedIndex)),
       bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           showSelectedLabels: false,
