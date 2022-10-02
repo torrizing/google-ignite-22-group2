@@ -60,6 +60,10 @@ lib/
 </a>
 
 <a href="https://github.com/regineshalom">
-  <img src="https://user-images.githubusercontent.com/54788382/193445284-58d99ae9-248f-428d-93ab-75f07f924e07.jpeg" width="45">
+  <img src="https://user-images.githubusercontent.com/54788382/193445284-58d99ae9-248f-428d-93ab-75f07f924e07.jpeg" width="43">
+</a>
+
+<a href="https://github.com/regineshalom">
+  <img src="https://user-images.githubusercontent.com/54788382/193445493-5abd7576-9622-4f36-b83f-1ea31d51f52e.jpeg" width="43">
 </a>
 
