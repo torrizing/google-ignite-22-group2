@@ -61,5 +61,10 @@ lib/
 ## Developers
 
 <a href="https://github.com/joshuadavidang">
-  <img src="https://github.com/joshuadavidang.png?size=60">
+  <img src="https://user-images.githubusercontent.com/54788382/193444706-4cef3ba5-3024-4cea-ad4d-ff5b44566452.jpeg" width="50">
 </a>
+
+<a href="https://github.com/joshuadavidang">
+  <img src="https://user-images.githubusercontent.com/54788382/193444706-4cef3ba5-3024-4cea-ad4d-ff5b44566452.jpeg" width="50">
+</a>
+
