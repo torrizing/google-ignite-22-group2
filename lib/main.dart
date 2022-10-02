@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/parent_component.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:google_ignite_app/screens/auth/login.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +30,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-        debugShowCheckedModeBanner: false, home: ParentComponent());
+        debugShowCheckedModeBanner: false,
+        // home: ParentComponent()
+        home: LoginPage());
   }
 }
