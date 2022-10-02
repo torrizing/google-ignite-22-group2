@@ -53,6 +53,7 @@ lib/
     |- camera_widget.dart
     |- card_widget.dart
     |- label_widget.dart
+    |- linechart_widget.dart
     |- search_widget.dart
     |- navigation.dart 
 ```
