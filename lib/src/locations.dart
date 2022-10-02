@@ -57,9 +57,9 @@ class Office {
   factory Office.fromJson(Map<String, dynamic> json) => _$OfficeFromJson(json);
   Map<String, dynamic> toJson() => _$OfficeToJson(this);
 
-  final String blk_no;
-  final String street;
-  final String max_floor;
+  final String address;
+  final String id;
+  final String image;
   final double lat;
   final double lng;
   final String name;
@@ -106,12 +106,12 @@ Future<Locations> getGoogleOffices() async {
   );
 }
 
-void main() {
-  final lines = File("hdb-property-information.csv").readAsLinesSync();
-  lines.removeAt(0);
-
-  for (var line in lines){
-    values = line.split(',');
-
-  }
-}
+// void main() {
+//   final lines = File("hdb-property-information.csv").readAsLinesSync();
+//   lines.removeAt(0);
+//
+//   for (var line in lines){
+//     values = line.split(',');
+//
+//   }
+// }
