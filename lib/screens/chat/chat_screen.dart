@@ -33,7 +33,7 @@ class _ChatDataState extends State<ChatData> {
   List<ChatList> chatList = [
     ChatList(
         name: "Joshua",
-        messageText: "I have excess milo powder",
+        messageText: "I have a tin of milo powder...",
         imageUrl: "assets/images/joshua.jpeg",
         time: "Now",
         isMessageRead: false),
@@ -41,13 +41,13 @@ class _ChatDataState extends State<ChatData> {
         name: "Regine",
         messageText: "I have excess milo powder",
         imageUrl: "assets/images/carousell.png",
-        time: "Now",
+        time: "10 minutes ago",
         isMessageRead: true),
     ChatList(
         name: "John Doe",
         messageText: "I have excess milo powder",
         imageUrl: "assets/images/joshua.jpeg",
-        time: "Now",
+        time: "5 hours ago",
         isMessageRead: true),
   ];
 

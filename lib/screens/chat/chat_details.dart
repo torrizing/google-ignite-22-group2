@@ -13,7 +13,7 @@ class ChatDetails extends StatefulWidget {
 class _ChatDetailsState extends State<ChatDetails> {
   List<ChatMessage> messages = [
     ChatMessage(messageContent: "Hi, Food Bank!", messageType: "receiver"),
-    ChatMessage(messageContent: "I have excess food", messageType: "receiver"),
+    ChatMessage(messageContent: "I've excess food", messageType: "receiver"),
     ChatMessage(
         messageContent: "Hey Joshua, thank you for contacting us.",
         messageType: "sender"),
@@ -21,7 +21,14 @@ class _ChatDetailsState extends State<ChatDetails> {
         messageContent: "Could you share more about it?",
         messageType: "sender"),
     ChatMessage(
-        messageContent: "I have excess milo powder", messageType: "receiver"),
+        messageContent:
+            "I have a tin of milo powder that is due to expire in 3 months.",
+        messageType: "receiver"),
+  ];
+
+  List<ChatMessage> acceptedDeal = [
+    ChatMessage(
+        messageContent: "Excess Food - 1x Milo Tin", messageType: "receiver")
   ];
 
   late TextEditingController _controller;
