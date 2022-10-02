@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/model/chat_message.dart';
 import 'package:google_ignite_app/reusable_widgets/navigation.dart';
+import 'package:google_ignite_app/reusable_widgets/camera_widget.dart';
 
 class ChatDetails extends StatefulWidget {
   const ChatDetails({super.key});
@@ -160,10 +161,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                       width: 40.0,
                       child: FloatingActionButton(
                         heroTag: 'btn1',
-                        onPressed: () {
-                          debugPrint("Tap");
-                          nextScreen(context, null);
-                        },
+                        onPressed: camera_widget,
                         backgroundColor: Colors.black,
                         elevation: 0,
                         child: const Icon(
