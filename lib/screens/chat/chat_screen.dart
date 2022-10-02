@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/model/chat_user.dart';
 import 'package:google_ignite_app/reusable_widgets/conversation_list.dart';
+import 'package:google_ignite_app/reusable_widgets/navigation.dart';
+import 'package:google_ignite_app/screens/chat/chat_details.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -49,19 +51,21 @@ class _ChatDataState extends State<ChatData> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: chatUsers.length,
-        shrinkWrap: true,
-        padding: const EdgeInsets.only(top: 16),
-        physics: const NeverScrollableScrollPhysics(),
-        itemBuilder: (context, index) {
-          return ConversationList(
-            name: chatUsers[index].name,
-            messageText: chatUsers[index].messageText,
-            imageUrl: chatUsers[index].imageURL,
-            time: chatUsers[index].time,
-            isMessageRead: (index == 0 || index == 3) ? true : false,
-          );
-        });
+    return GestureDetector(
+        onTap: () => {nextScreen(context, const ChatDetails())},
+        child: ListView.builder(
+            itemCount: chatUsers.length,
+            shrinkWrap: true,
+            padding: const EdgeInsets.only(top: 16),
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) {
+              return ConversationList(
+                name: chatUsers[index].name,
+                messageText: chatUsers[index].messageText,
+                imageUrl: chatUsers[index].imageURL,
+                time: chatUsers[index].time,
+                isMessageRead: (index == 0 || index == 3) ? true : false,
+              );
+            }));
   }
 }
