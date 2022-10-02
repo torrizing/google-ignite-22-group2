@@ -29,6 +29,7 @@ flutter run
 * Google Sign In
 * Google Map
 * Camera
+* BMI Line Chart
 * Management
 * Chat
 
