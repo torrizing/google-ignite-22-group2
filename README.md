@@ -37,7 +37,7 @@ flutter run
 * TBC
 
 
-### Project Structure
+## Project Structure
 ```
 lib/
 |- main.dart
