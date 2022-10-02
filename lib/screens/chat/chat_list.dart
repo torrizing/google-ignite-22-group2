@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class ConversationList extends StatefulWidget {
-  ConversationList(
+class ChatList extends StatefulWidget {
+  ChatList(
       {super.key,
       required this.name,
       required this.messageText,
@@ -17,10 +17,10 @@ class ConversationList extends StatefulWidget {
   bool isMessageRead;
 
   @override
-  State<ConversationList> createState() => _ConversationListState();
+  State<ChatList> createState() => _ChatListState();
 }
 
-class _ConversationListState extends State<ConversationList> {
+class _ChatListState extends State<ChatList> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -56,8 +56,8 @@ class _ConversationListState extends State<ConversationList> {
                               fontSize: 13,
                               color: Colors.grey.shade600,
                               fontWeight: widget.isMessageRead
-                                  ? FontWeight.bold
-                                  : FontWeight.normal),
+                                  ? FontWeight.normal
+                                  : FontWeight.bold),
                         ),
                       ],
                     ),
@@ -71,7 +71,7 @@ class _ConversationListState extends State<ConversationList> {
             style: TextStyle(
                 fontSize: 12,
                 fontWeight:
-                    widget.isMessageRead ? FontWeight.bold : FontWeight.normal),
+                    widget.isMessageRead ? FontWeight.normal : FontWeight.bold),
           ),
         ]));
   }

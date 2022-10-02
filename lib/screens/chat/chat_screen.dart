@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/model/chat_user.dart';
-import 'package:google_ignite_app/reusable_widgets/conversation_list.dart';
+import 'package:google_ignite_app/screens/chat/chat_list.dart';
 import 'package:google_ignite_app/reusable_widgets/navigation.dart';
 import 'package:google_ignite_app/screens/chat/chat_details.dart';
 
@@ -31,22 +30,25 @@ class ChatData extends StatefulWidget {
 }
 
 class _ChatDataState extends State<ChatData> {
-  List<ChatUsers> chatUsers = [
-    ChatUsers(
+  List<ChatList> chatList = [
+    ChatList(
         name: "Joshua",
         messageText: "I have excess milo powder",
-        imageURL: "assets/images/joshua.jpeg",
-        time: "Now"),
-    ChatUsers(
+        imageUrl: "assets/images/joshua.jpeg",
+        time: "Now",
+        isMessageRead: false),
+    ChatList(
+        name: "Regine",
+        messageText: "I have excess milo powder",
+        imageUrl: "assets/images/carousell.png",
+        time: "Now",
+        isMessageRead: true),
+    ChatList(
         name: "John Doe",
-        messageText: "Do you need anything else?",
-        imageURL: "assets/images/carousell.png",
-        time: "3h ago"),
-    ChatUsers(
-        name: "David Dawson",
-        messageText: "Thank you!",
-        imageURL: "assets/images/carousell.png",
-        time: "5h ago")
+        messageText: "I have excess milo powder",
+        imageUrl: "assets/images/joshua.jpeg",
+        time: "Now",
+        isMessageRead: true),
   ];
 
   @override
@@ -54,18 +56,17 @@ class _ChatDataState extends State<ChatData> {
     return GestureDetector(
         onTap: () => {nextScreen(context, const ChatDetails())},
         child: ListView.builder(
-            itemCount: chatUsers.length,
+            itemCount: chatList.length,
             shrinkWrap: true,
             padding: const EdgeInsets.only(top: 16),
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
-              return ConversationList(
-                name: chatUsers[index].name,
-                messageText: chatUsers[index].messageText,
-                imageUrl: chatUsers[index].imageURL,
-                time: chatUsers[index].time,
-                isMessageRead: (index == 0 || index == 3) ? true : false,
-              );
+              return ChatList(
+                  name: chatList[index].name,
+                  messageText: chatList[index].messageText,
+                  imageUrl: chatList[index].imageUrl,
+                  time: chatList[index].time,
+                  isMessageRead: chatList[index].isMessageRead);
             }));
   }
 }
