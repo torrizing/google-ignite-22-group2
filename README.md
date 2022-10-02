@@ -23,7 +23,7 @@ Execute the following command to run the app
 flutter run
 ```
 
-## App Features:
+## App Features
 
 * Splashscreen
 * Google Sign In
@@ -32,7 +32,7 @@ flutter run
 * Management
 * Chat
 
-### Project Structure
+## Project Structure
 ```
 lib/
 |- main.dart
