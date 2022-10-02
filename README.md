@@ -49,18 +49,22 @@ lib/
 |- model/
     |- chat_message.dart
     |- order_form.dart
+    
 |- screens/
     |- auth
-        |- login.dart     
+        |- login.dart
+        
     |- chat/
         |- chat_details.dart
         |- chat_list.dart
         |- chat_screen.dart
         |- preview_page.dart
+        
     |- home_screen.dart
     |- management_screen.dart
     |- map_screen.dart
-    |- settings_screen.dart 
+    |- settings_screen.dart
+    
 |- reusable_widgets/
     |- camera_widget.dart
     |- card_widget.dart
