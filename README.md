@@ -1,3 +1,9 @@
+## What does the app do
+* Digitalises management of food collection
+* Communicates with stakeholders via the chat function
+* Locate beneficiaries / vending machines via the map function
+* BMI tracker
+
 ## How to run the app 
 
 **Step 1:**
@@ -24,6 +30,7 @@ flutter run
 ```
 
 ## App Features
+<img src="https://user-images.githubusercontent.com/54788382/193469200-40d06dca-50db-4f72-b25c-d68abcf8e735.png" width="150">
 
 * Splashscreen
 * Google Sign In
