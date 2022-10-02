@@ -1,6 +1,8 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/model/chat_message.dart';
+import 'package:google_ignite_app/reusable_widgets/camera_widget.dart';
 import 'package:google_ignite_app/reusable_widgets/navigation.dart';
 
 class ChatDetails extends StatefulWidget {
@@ -160,9 +162,10 @@ class _ChatDetailsState extends State<ChatDetails> {
                       width: 40.0,
                       child: FloatingActionButton(
                         heroTag: 'btn1',
-                        onPressed: () {
-                          debugPrint("Tap");
-                          nextScreen(context, null);
+                        onPressed: () async {
+                          debugPrint("Camera Tap");
+                          await availableCameras().then((value) => nextScreen(
+                              context, CameraWidget(cameras: value)));
                         },
                         backgroundColor: Colors.black,
                         elevation: 0,

@@ -53,6 +53,13 @@ lib/
 |- screens/
     |- auth
         |- login.dart
+        
+    |- chat
+        |- chat_details.dart
+        |- chat_list.dart
+        |- chat_screen.dart
+        |- preview_page.dart
+
     |- home_screen.dart
     |- management_screen.dart
     |- map_screen.dart
