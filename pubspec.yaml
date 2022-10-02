@@ -38,13 +38,11 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/joshua.jpeg
-    - assets/images/login.png
-    - assets/images/welcome.png
-    - assets/images/map.jpg
-    - assets/images/carousell.png
     - assets/images/chart.png
     - assets/images/bread.jpeg
     - assets/images/account.png
+    - assets/images/profile.png
+    - assets/images/profile2.png
     - assets/locations.json
 
 

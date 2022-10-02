@@ -49,12 +49,9 @@ class CardTitle extends StatelessWidget {
                     // nextScreen(context, const SettingsPage());
                   },
                   child: const CircleAvatar(
-                    radius: 20,
-                    backgroundColor: Colors.orange,
-                    child: Text(
-                      'FB',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    backgroundImage: AssetImage("assets/images/profile.png"),
+                    maxRadius: 30.0,
+                    backgroundColor: Colors.transparent,
                   ),
                 )))
           ],
@@ -175,16 +172,18 @@ class TransactionContent extends StatelessWidget {
                       backgroundImage: AssetImage('assets/images/joshua.jpeg'),
                     ))),
             const SizedBox(
-                height: 70,
-                width: 70,
+                height: 80,
+                width: 80,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/welcome.png'),
+                  backgroundImage: AssetImage('assets/images/profile2.png'),
+                  backgroundColor: Colors.transparent,
                 )),
             const SizedBox(
-                height: 70,
-                width: 70,
+                height: 80,
+                width: 80,
                 child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/login.png'),
+                  backgroundImage: AssetImage('assets/images/profile2.png'),
+                  backgroundColor: Colors.transparent,
                 ))
           ],
         ));
