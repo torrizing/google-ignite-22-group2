@@ -161,7 +161,9 @@ class _ChatDetailsState extends State<ChatDetails> {
                       width: 40.0,
                       child: FloatingActionButton(
                         heroTag: 'btn1',
-                        onPressed: camera_widget,
+                        onPressed: () {
+                          TakePictureScreen()
+                          };
                         backgroundColor: Colors.black,
                         elevation: 0,
                         child: const Icon(
