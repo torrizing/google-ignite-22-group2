@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       const CardTitle(),
-      cardComponent(),
+      // cardComponent(),
       const LabelWidget(textTitle: "Services"),
       servicesCard(),
       const LabelWidget(textTitle: "Recent Chats"),
@@ -111,7 +111,7 @@ Widget servicesCard() {
               cardIcon: const Icon(
                 Icons.local_shipping,
                 size: 50,
-                color: Colors.black,
+                color: Colors.grey,
               ),
               pageToGo: ManagementScreen()),
           const SizedBox(width: 15),
@@ -120,14 +120,14 @@ Widget servicesCard() {
             cardIcon: Icon(
               Icons.textsms,
               size: 50,
-              color: Colors.black,
+              color: Colors.grey,
             ),
             pageToGo: ChatScreen(),
           ),
           const SizedBox(width: 15),
           const CardWidget(
             cardTitle: 'Map',
-            cardIcon: Icon(Icons.place, size: 50, color: Colors.black),
+            cardIcon: Icon(Icons.place, size: 50, color: Colors.grey),
             pageToGo: MapScreen(),
           ),
           const SizedBox(width: 50)

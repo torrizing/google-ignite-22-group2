@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
     initialization();
   }
 
-    void initialization() async {
+  void initialization() async {
     FlutterNativeSplash.remove();
   }
 
