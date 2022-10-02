@@ -161,9 +161,10 @@ class _ChatDetailsState extends State<ChatDetails> {
                       width: 40.0,
                       child: FloatingActionButton(
                         heroTag: 'btn1',
-                        onPressed: () {
-                          TakePictureScreen()
-                          };
+                        onPressed: () async {
+            await availableCameras().then((value) => Navigator.push(context,
+                MaterialPageRoute(builder: (_) => CameraPage(cameras: value))));
+          },
                         backgroundColor: Colors.black,
                         elevation: 0,
                         child: const Icon(
