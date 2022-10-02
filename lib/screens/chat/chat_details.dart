@@ -26,7 +26,7 @@ class _ChatDetailsState extends State<ChatDetails> {
         messageType: "receiver"),
   ];
 
-  List<ChatMessage> acceptedDeal = [
+  List<ChatMessage> chatDeal = [
     ChatMessage(
         messageContent: "Excess Food - 1x Milo Tin", messageType: "receiver")
   ];

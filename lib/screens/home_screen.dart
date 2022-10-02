@@ -104,18 +104,18 @@ Widget servicesCard() {
       height: 150.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        children: const [
-          SizedBox(width: 30),
+        children: [
+          const SizedBox(width: 30),
           CardWidget(
               cardTitle: 'Management',
-              cardIcon: Icon(
+              cardIcon: const Icon(
                 Icons.local_shipping,
                 size: 50,
                 color: Colors.black,
               ),
               pageToGo: ManagementScreen()),
-          SizedBox(width: 15),
-          CardWidget(
+          const SizedBox(width: 15),
+          const CardWidget(
             cardTitle: 'Chat',
             cardIcon: Icon(
               Icons.textsms,
@@ -124,13 +124,13 @@ Widget servicesCard() {
             ),
             pageToGo: ChatScreen(),
           ),
-          SizedBox(width: 15),
-          CardWidget(
+          const SizedBox(width: 15),
+          const CardWidget(
             cardTitle: 'Map',
             cardIcon: Icon(Icons.place, size: 50, color: Colors.black),
             pageToGo: MapScreen(),
           ),
-          SizedBox(width: 50)
+          const SizedBox(width: 50)
         ],
       ));
 }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/parent_component.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-main() {
+void main() {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
 
@@ -16,6 +19,11 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    initialization();
+  }
+
+    void initialization() async {
+    FlutterNativeSplash.remove();
   }
 
   @override
@@ -24,24 +32,3 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false, home: ParentComponent());
   }
 }
-
-// import 'dart:async';
-// import 'dart:io';
-
-// import 'package:camera/camera.dart';
-// import 'package:flutter/material.dart';
-
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   final cameras = await availableCameras();
-//   final firstCamera = cameras.first;
-
-//   runApp(
-//     MaterialApp(
-//       theme: ThemeData.dark(),
-//       home: TakePictureScreen(
-//         camera: firstCamera,
-//       ),
-//     ),
-//   );
-// }
