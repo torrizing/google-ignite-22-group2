@@ -35,6 +35,7 @@ flutter run
 * Splashscreen
 * Google Sign In
 * Google Map
+* Google Font (Noto Sans)
 * Camera
 * BMI Line Chart
 * Management

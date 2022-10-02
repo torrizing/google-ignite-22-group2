@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/parent_component.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_ignite_app/screens/auth/login.dart';
 
 void main() {
@@ -29,9 +29,12 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
         debugShowCheckedModeBanner: false,
-        // home: ParentComponent()
-        home: LoginPage());
+        theme: ThemeData(
+            textTheme: GoogleFonts.notoSansTextTheme(
+          Theme.of(context).textTheme,
+        )),
+        home: const LoginPage());
   }
 }

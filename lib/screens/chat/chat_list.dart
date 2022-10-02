@@ -32,6 +32,7 @@ class _ChatListState extends State<ChatList> {
               children: <Widget>[
                 CircleAvatar(
                   backgroundImage: AssetImage(widget.imageUrl),
+                  backgroundColor: Colors.transparent,
                   maxRadius: 30,
                 ),
                 const SizedBox(
