@@ -105,7 +105,7 @@ Widget servicesCard() {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: const [
-          SizedBox(width: 40),
+          SizedBox(width: 30),
           CardWidget(
               cardTitle: 'Management',
               cardIcon: Icon(
