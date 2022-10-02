@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_ignite_app/parent_component.dart';
 
-Future<void> main() async {
+main() {
   runApp(const MyApp());
 }
 
