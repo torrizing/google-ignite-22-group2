@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/data/bmi.dart';
-import 'package:google_ignite_app/data/price_point.dart';
+import 'package:google_ignite_app/data/bmi_data.dart';
 import 'package:google_ignite_app/reusable_widgets/linechart_widget.dart';
 import 'package:google_ignite_app/reusable_widgets/navigation.dart';
 import 'package:google_ignite_app/screens/chat/chat_details.dart';
@@ -197,7 +196,7 @@ class _MyChartState extends State<MyChart> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            LineChartWidget(pricePoints),
+            LineChartWidget(bmiData),
             // Column(
             //   children: industrySectors
             //       .map<Widget>((sector) => SectorRow(sector))
@@ -209,24 +208,3 @@ class _MyChartState extends State<MyChart> {
     );
   }
 }
-
-// class SectorRow extends StatelessWidget {
-//   const SectorRow(this.sector, {Key? key}) : super(key: key);
-//   final Sector sector;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       children: [
-//         SizedBox(
-//           width: 16,
-//           child: CircleAvatar(
-//             backgroundColor: sector.color,
-//           ),
-//         ),
-//         const Spacer(),
-//         Text(sector.title),
-//       ],
-//     );
-//   }
-// }

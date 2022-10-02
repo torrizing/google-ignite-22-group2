@@ -6,17 +6,35 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(color: Colors.white),
-      child: const Center(
-        child: Text(
-          'Hello World',
-          textDirection: TextDirection.ltr,
-          style: TextStyle(
-            fontSize: 32,
-            color: Colors.black87,
-          ),
-        ),
-      ),
-    );
+        padding: const EdgeInsets.only(left: 25.0),
+        child: (Column(children: [
+          SizedBox(
+            height: 400,
+            child: ListView(
+              children: const <Widget>[
+                ListTile(
+                  leading: Icon(Icons.account_circle),
+                  iconColor: Colors.black,
+                  title: Text('Profile'),
+                ),
+                ListTile(
+                  leading: Icon(Icons.password),
+                  iconColor: Colors.black,
+                  title: Text('Change Password'),
+                ),
+                ListTile(
+                  leading: Icon(Icons.dark_mode),
+                  iconColor: Colors.black,
+                  title: Text('Dark Mode'),
+                ),
+                ListTile(
+                  leading: Icon(Icons.logout),
+                  iconColor: Colors.grey,
+                  title: Text('Log Out'),
+                ),
+              ],
+            ),
+          )
+        ])));
   }
 }

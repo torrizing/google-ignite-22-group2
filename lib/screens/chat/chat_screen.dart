@@ -40,13 +40,13 @@ class _ChatDataState extends State<ChatData> {
     ChatList(
         name: "Regine",
         messageText: "I have excess milo powder",
-        imageUrl: "assets/images/carousell.png",
+        imageUrl: "assets/images/profile2.png",
         time: "10 minutes ago",
         isMessageRead: true),
     ChatList(
         name: "John Doe",
         messageText: "I have excess milo powder",
-        imageUrl: "assets/images/joshua.jpeg",
+        imageUrl: "assets/images/profile.png",
         time: "5 hours ago",
         isMessageRead: true),
   ];

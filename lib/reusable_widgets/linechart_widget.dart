@@ -1,9 +1,9 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:google_ignite_app/data/price_point.dart';
+import 'package:google_ignite_app/data/bmi_data.dart';
 
 class LineChartWidget extends StatelessWidget {
-  final List<PricePoint> points;
+  final List<BmiData> points;
 
   const LineChartWidget(this.points, {Key? key}) : super(key: key);
 
