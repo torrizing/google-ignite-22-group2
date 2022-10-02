@@ -2,14 +2,14 @@
 
 **Step 1:**
 
-To clone this project, execute the follow command:
+To clone this project, execute the follow command
 
 ```
 git clone https://github.com/torrizing/google-ignite-22-group2.git
 ```
 
 **Step 2:**
-Open up project folder and execute the following command to install required dependencies:
+Open up project folder and execute the following command to install the required dependencies
 
 ```
 flutter pub get 
@@ -17,7 +17,7 @@ flutter pub get
 
 **Step 3:**
 
-Execute the command to run the app
+Execute the following command to run the app
 
 ```
 flutter run
@@ -32,7 +32,7 @@ flutter run
 * Management
 * Chat
 
-### Up-Coming Features:
+### Upcoming Features:
 
 * TBC
 
