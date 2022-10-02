@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>682209836694-c6mt83ut6fmnv42dj7lmhh0foo1k01sv.apps.googleusercontent.com</string>
+	<string>454605566622-srskemkm208ivulnq1s1hsc87ptrgmab.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.682209836694-c6mt83ut6fmnv42dj7lmhh0foo1k01sv</string>
+	<string>com.googleusercontent.apps.454605566622-srskemkm208ivulnq1s1hsc87ptrgmab</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBPfkLH62HfY7b8USdTU5Tw8jmfda93OX4</string>
+	<string>AIzaSyAFG7lUF6tlF4Q06ABGgmIY2mEcdwOH_6s</string>
 	<key>GCM_SENDER_ID</key>
-	<string>682209836694</string>
+	<string>454605566622</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.googleIgniteApp</string>
 	<key>PROJECT_ID</key>
-	<string>ignite-2b785</string>
+	<string>sign-in-bread</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ignite-2b785.appspot.com</string>
+	<string>sign-in-bread.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:682209836694:ios:5099fccaf44506ffbf0cb7</string>
+	<string>1:454605566622:ios:19aa45247c214e10fa818f</string>
 </dict>
 </plist>

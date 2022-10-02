@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_ignite_app/parent_component.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'dart:async';
-import 'dart:convert' show json;
-import 'package:http/http.dart' as http;
 
 GoogleSignIn _googleSignIn = GoogleSignIn(
   // Optional clientId
@@ -22,7 +21,6 @@ class LoginPage extends StatefulWidget {
 
 class LoginPageState extends State<LoginPage> {
   GoogleSignInAccount? _currentUser;
-  String _contactText = '';
 
   @override
   void initState() {
@@ -32,57 +30,10 @@ class LoginPageState extends State<LoginPage> {
         _currentUser = account;
       });
       if (_currentUser != null) {
-        _handleGetContact(_currentUser!);
+        debugPrint("OK");
       }
     });
     _googleSignIn.signInSilently();
-  }
-
-  Future<void> _handleGetContact(GoogleSignInAccount user) async {
-    setState(() {
-      _contactText = 'Loading contact info...';
-    });
-    final http.Response response = await http.get(
-      Uri.parse('https://people.googleapis.com/v1/people/me/connections'
-          '?requestMask.includeField=person.names'),
-      headers: await user.authHeaders,
-    );
-    if (response.statusCode != 200) {
-      setState(() {
-        _contactText = 'People API gave a ${response.statusCode} '
-            'response. Check logs for details.';
-      });
-      print('People API ${response.statusCode} response: ${response.body}');
-      return;
-    }
-    final Map<String, dynamic> data =
-        json.decode(response.body) as Map<String, dynamic>;
-    final String? namedContact = _pickFirstNamedContact(data);
-    setState(() {
-      if (namedContact != null) {
-        _contactText = 'I see you know $namedContact!';
-      } else {
-        _contactText = 'No contacts to display.';
-      }
-    });
-  }
-
-  String? _pickFirstNamedContact(Map<String, dynamic> data) {
-    final List<dynamic>? connections = data['connections'] as List<dynamic>?;
-    final Map<String, dynamic>? contact = connections?.firstWhere(
-      (dynamic contact) => contact['names'] != null,
-      orElse: () => null,
-    ) as Map<String, dynamic>?;
-    if (contact != null) {
-      final Map<String, dynamic>? name = contact['names'].firstWhere(
-        (dynamic name) => name['displayName'] != null,
-        orElse: () => null,
-      ) as Map<String, dynamic>?;
-      if (name != null) {
-        return name['displayName'] as String?;
-      }
-    }
-    return null;
   }
 
   Future<void> _handleSignIn() async {
@@ -109,14 +60,9 @@ class LoginPageState extends State<LoginPage> {
             subtitle: Text(user.email),
           ),
           const Text('Signed in successfully.'),
-          Text(_contactText),
           ElevatedButton(
             onPressed: _handleSignOut,
             child: const Text('SIGN OUT'),
-          ),
-          ElevatedButton(
-            child: const Text('REFRESH'),
-            onPressed: () => _handleGetContact(user),
           ),
         ],
       );
@@ -136,13 +82,12 @@ class LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    final GoogleSignInAccount? user = _currentUser;
+
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Google Sign In'),
-        ),
         body: ConstrainedBox(
-          constraints: const BoxConstraints.expand(),
-          child: _buildBody(),
-        ));
+            constraints: const BoxConstraints.expand(),
+            // child: _buildBody(),
+            child: user != null ? const ParentComponent() : _buildBody()));
   }
 }
