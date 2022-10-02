@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_ignite_app/parent_component.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'dart:async';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 GoogleSignIn _googleSignIn = GoogleSignIn(
-  // Optional clientId
-  // clientId: '479882132969-9i9aqik3jfjd7qhci1nqf0bm2g71rm1u.apps.googleusercontent.com',
   scopes: <String>[
     'email',
     'https://www.googleapis.com/auth/contacts.readonly',
@@ -67,16 +66,21 @@ class LoginPageState extends State<LoginPage> {
         ],
       );
     } else {
-      return Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          const Text('You are not currently signed in.'),
-          ElevatedButton(
-            onPressed: _handleSignIn,
-            child: const Text('SIGN IN'),
-          ),
-        ],
-      );
+      return Container(
+          padding: const EdgeInsets.only(left: 20, right: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              const Image(
+                image: AssetImage('assets/images/bread.jpeg'),
+              ),
+              SignInButton(
+                Buttons.GoogleDark,
+                mini: false,
+                onPressed: _handleSignIn,
+              )
+            ],
+          ));
     }
   }
 

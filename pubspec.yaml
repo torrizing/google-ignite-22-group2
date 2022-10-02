@@ -25,6 +25,7 @@ dependencies:
   permission_handler: ^10.0.2
   flutter_native_splash: ^2.2.10+1
   google_sign_in: ^5.4.2
+  flutter_signin_button: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -35,8 +36,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-  # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/ninjavan.png
     - assets/images/joshua.jpeg
@@ -45,6 +44,7 @@ flutter:
     - assets/images/map.jpg
     - assets/images/carousell.png
     - assets/images/chart.png
+    - assets/images/bread.jpeg
     - assets/locations.json
 
 
