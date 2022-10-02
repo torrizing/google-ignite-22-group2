@@ -32,12 +32,7 @@ flutter run
 * Management
 * Chat
 
-### Upcoming Features:
-
-* TBC
-
-
-## Project Structure
+### Project Structure
 ```
 lib/
 |- main.dart
@@ -52,6 +47,7 @@ lib/
     |- settings_screen.dart 
   
 |- reusable_widgets/
+
     |- camera_widget.dart
     |- card_widget.dart
     |- label_widget.dart
@@ -64,7 +60,7 @@ lib/
   <img src="https://user-images.githubusercontent.com/54788382/193444706-4cef3ba5-3024-4cea-ad4d-ff5b44566452.jpeg" width="50">
 </a>
 
-<a href="https://github.com/joshuadavidang">
-  <img src="https://user-images.githubusercontent.com/54788382/193444706-4cef3ba5-3024-4cea-ad4d-ff5b44566452.jpeg" width="50">
+<a href="https://github.com/regineshalom">
+  <img src="https://user-images.githubusercontent.com/54788382/193445284-58d99ae9-248f-428d-93ab-75f07f924e07.jpeg" width="45">
 </a>
 
