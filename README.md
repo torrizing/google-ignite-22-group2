@@ -60,7 +60,10 @@ lib/
 
 ## Developers
 
-@joshuadavidang
-@
-@
+<a href="https://github.com/joshuadavidang">
+  <img src="https://github.com/joshuadavidang.png?size=60">
+</a>
 
+<a href="https://github.com/zq-paperpiano">
+  <img src="https://github.com/zq-paperpiano.png?size=60">
+</a>
