@@ -67,3 +67,7 @@ lib/
   <img src="https://user-images.githubusercontent.com/54788382/193445493-5abd7576-9622-4f36-b83f-1ea31d51f52e.jpeg" width="43">
 </a>
 
+<a href="https://github.com/torrizing">
+ <img src="https://user-images.githubusercontent.com/54788382/193451036-b7a2d2ab-8777-4da2-a642-baeb855cde69.jpeg" width="33">
+</a>
+
