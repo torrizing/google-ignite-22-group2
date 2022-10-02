@@ -1,5 +1,6 @@
 import 'dart:convert';
-
+import 'dart:io';
+import '../src/hdb-property-information.csv' as hdbinfo;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:http/http.dart' as http;
@@ -56,9 +57,9 @@ class Office {
   factory Office.fromJson(Map<String, dynamic> json) => _$OfficeFromJson(json);
   Map<String, dynamic> toJson() => _$OfficeToJson(this);
 
-  final String address;
-  final String id;
-  final String image;
+  final String blk_no;
+  final String street;
+  final String max_floor;
   final double lat;
   final double lng;
   final String name;
@@ -103,4 +104,14 @@ Future<Locations> getGoogleOffices() async {
       await rootBundle.loadString('assets/locations.json'),
     ) as Map<String, dynamic>,
   );
+}
+
+void main() {
+  final lines = File("hdb-property-information.csv").readAsLinesSync();
+  lines.removeAt(0);
+
+  for (var line in lines){
+    values = line.split(',');
+
+  }
 }

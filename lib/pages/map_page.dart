@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geocoding/geocoding.dart';
+import '../src/hdb-property-information.csv' as hdbinfo;
 import '../src/locations.dart' as locations;
 import 'package:http/http.dart' as http;
 
