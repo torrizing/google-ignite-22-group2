@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
     initialization();
   }
 
-    void initialization() async {
+  void initialization() async {
     FlutterNativeSplash.remove();
   }
 
@@ -32,3 +32,5 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false, home: ParentComponent());
   }
 }
+
+//test file
