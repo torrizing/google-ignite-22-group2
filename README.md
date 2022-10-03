@@ -34,9 +34,9 @@ flutter run
 
 * Splashscreen
 * Google Sign In
-* Google Map
+* Google Map Plugin
 * Google Font (Noto Sans)
-* Camera
+* Camera Plugin
 * BMI Line Chart
 * Management
 * Chat
