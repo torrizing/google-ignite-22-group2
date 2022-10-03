@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:geocoding/geocoding.dart';
-import '../src/hdb-property-information.csv' as hdbinfo;
 import '../src/locations.dart' as locations;
-import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class MapScreen extends StatefulWidget {
   const MapScreen({super.key});
@@ -17,16 +15,16 @@ class _MapScreenState extends State<MapScreen> {
     final googleOffices = await locations.getGoogleOffices();
     setState(() {
       _markers.clear();
-      for (final office in googleOffices.offices) {
+      for (final office in googleOffices.placeholder) {
         final marker = Marker(
-          markerId: MarkerId(office.name),
-          position: LatLng(office.lat, office.lng),
+          markerId: MarkerId(office.address),
+          position: LatLng(office.Latitude, office.Longitude),
           infoWindow: InfoWindow(
-            title: office.name,
-            snippet: office.address,
+            title: office.address,
+            snippet: office.oneroom_sold.toString() + ", " + office.tworoom_sold.toString() + ", " + office.oneroom_rental.toString() + ", " + office.tworoom_rental.toString(),
           ),
         );
-        _markers[office.name] = marker;
+        _markers[office.address] = marker;
       }
     });
   }
