@@ -38,9 +38,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Explanation on why the camera access is needed.</string>
+	<string>to snap photos of excess food, if need be.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Explanation on why the microphone access is needed.</string>
+	<string>to record videos of excess food, if need be.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
