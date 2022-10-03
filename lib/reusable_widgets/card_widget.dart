@@ -18,9 +18,10 @@ class CardWidget extends StatelessWidget {
         width: 210.0,
         child: Card(
             elevation: 2,
+            color: Colors.white,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
-                side: const BorderSide(color: Colors.grey, width: .3)),
+                side: const BorderSide(color: Colors.grey, width: .2)),
             child: (InkWell(
                 splashColor: Colors.blue.withAlpha(30),
                 onTap: () {

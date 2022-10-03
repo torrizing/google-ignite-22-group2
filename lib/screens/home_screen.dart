@@ -110,26 +110,25 @@ Widget servicesCard() {
           const SizedBox(width: 30),
           CardWidget(
               cardTitle: 'Management',
-              cardIcon: const Icon(
-                Icons.local_shipping,
-                size: 50,
-                color: Colors.grey,
+              cardIcon: const Image(
+                image: AssetImage("assets/images/services_icon/management.png"),
+                width: 70,
               ),
               pageToGo: ManagementScreen()),
           const SizedBox(width: 15),
           const CardWidget(
             cardTitle: 'Chat',
-            cardIcon: Icon(
-              Icons.textsms,
-              size: 50,
-              color: Colors.grey,
-            ),
+            cardIcon: Image(
+                image: AssetImage("assets/images/services_icon/chat.png"),
+                width: 65),
             pageToGo: ChatScreen(),
           ),
           const SizedBox(width: 15),
           const CardWidget(
             cardTitle: 'Map',
-            cardIcon: Icon(Icons.place, size: 50, color: Colors.grey),
+            cardIcon: Image(
+                image: AssetImage("assets/images/services_icon/map.png"),
+                width: 50),
             pageToGo: MapScreen(),
           ),
           const SizedBox(width: 50)
