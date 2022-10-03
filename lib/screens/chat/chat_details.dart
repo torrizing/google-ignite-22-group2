@@ -167,7 +167,7 @@ class _ChatDetailsState extends State<ChatDetails> {
                           await availableCameras().then((value) => nextScreen(
                               context, CameraWidget(cameras: value)));
                         },
-                        backgroundColor: Colors.black,
+                        backgroundColor: Colors.deepOrange,
                         elevation: 0,
                         child: const Icon(
                           Icons.photo_camera,

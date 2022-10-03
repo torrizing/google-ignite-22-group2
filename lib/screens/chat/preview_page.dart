@@ -1,6 +1,9 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:google_ignite_app/reusable_widgets/navigation.dart';
 import 'dart:io';
+
+import 'package:google_ignite_app/screens/chat/chat_details.dart';
 
 class PreviewPage extends StatelessWidget {
   const PreviewPage({Key? key, required this.picture}) : super(key: key);
